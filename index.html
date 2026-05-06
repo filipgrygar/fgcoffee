@@ -26,6 +26,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -114,6 +118,10 @@
       max-width: 760px;
     }
 
+    .text p {
+      margin-bottom: 20px;
+    }
+
     .menu {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -125,6 +133,12 @@
       padding: 28px;
       border-radius: 24px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      transition: 0.3s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
 
     .menu-card h4 {
@@ -149,10 +163,9 @@
     }
 
     .mail {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 600;
       display: block;
-      margin-bottom: 10px;
       transition: 0.2s ease;
     }
 
@@ -171,17 +184,6 @@
 
     .contact-item {
       margin-bottom: 10px;
-    }
-
-    .mail {
-      font-size: 24px;
-      font-weight: 600;
-      display: block;
-      transition: 0.2s ease;
-    }
-
-    .mail:hover {
-      opacity: 0.7;
     }
 
     footer {
@@ -242,15 +244,14 @@
       <div class="text" style="margin-bottom:60px;">
         První kávový víkend již brzy :D<br><br>
 
-        Pátek  ZAVŘENO<br>
-        Sobota ZAVŘENO
+        Pátek ZAVŘENO<br>
+        Sobota ZAVŘENO<br>
         Neděle ZAVŘENO
       </div>
 
       <h3>Co u nás najdeš</h3>
 
       <div class="menu">
-
         <div class="menu-card">
           <h4>esko drinky</h4>
           <p>z výběrové kávy</p>
@@ -270,7 +271,6 @@
           <h4>něco sladkého</h4>
           <p>poctivé domácí dezerty</p>
         </div>
-
       </div>
     </section>
 
@@ -278,14 +278,15 @@
       <h3>O projektu</h3>
 
       <div class="text">
-  <p>
-    FG COFFEE nabízí mobilní coffee bar s důrazem na výběrovou kávu z renomovaných českých i zahraničních pražíren. Ideální řešení pro svatby, firemní akce i soukromé oslavy, kde chcete hostům dopřát výjimečný servis.
-  </p>
+        <p>
+          FG COFFEE nabízí mobilní coffee bar s důrazem na výběrovou kávu z renomovaných českých i zahraničních pražíren. Ideální řešení pro svatby, firemní akce i soukromé oslavy, kde chcete hostům dopřát výjimečný servis.
+        </p>
 
-  <p>
-    Mezi Vraty je víkendový coffee spot v Chyňavě, který vznikl jako malý venkovní stánek. Otevřený je převážně o víkendech, párkrát do měsíce. Jeho cílem je přinést výběrovou kávu i do menší obce a vytvořit příjemné místo pro setkávání.
-  </p>
-</div>
+        <p>
+          Mezi Vraty je víkendový coffee spot v Chyňavě, který vznikl jako malý venkovní stánek. Otevřený je převážně o víkendech, párkrát do měsíce. Jeho cílem je přinést výběrovou kávu i do menší obce a vytvořit příjemné místo pro setkávání.
+        </p>
+      </div>
+    </section>
 
     <section class="section">
       <h3>O mně</h3>
@@ -293,11 +294,11 @@
       <div class="text">
         Jmenuju se Filip Grygar a stojím za FG Coffee.
 
-Ke kávě jsem se dostal ve třinácti a od té doby se jí věnuju naplno. Prošel jsem si různými kurzy, prací za barem i soutěžemi.
+        Ke kávě jsem se dostal ve třinácti a od té doby se jí věnuju naplno. Prošel jsem si různými kurzy, prací za barem i soutěžemi.
 
-V roce 2024 jsem vyhrál soutěž Barista Junior a zároveň se umístil v TOP 5 na Barista Cup Ostrava.
+        V roce 2024 jsem vyhrál soutěž Barista Junior a zároveň se umístil v TOP 5 na Barista Cup Ostrava.
 
-Baví mě rozmanitost v kávě a FG Coffee je způsob, jak ji ukázat ostatním.
+        Baví mě rozmanitost v kávě a FG Coffee je způsob, jak ji ukázat ostatním.
       </div>
     </section>
 
