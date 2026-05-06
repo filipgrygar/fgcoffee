@@ -1,129 +1,346 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FG Coffee – Mezi Vraty</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f3ef;
       color: #111;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      color: white;
+      padding: 20px;
     }
 
-    .container {
+    .hero-content {
       max-width: 700px;
-      margin: auto;
-      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 42px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
+    .hero h1 {
+      font-size: 82px;
+      letter-spacing: 8px;
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
-    h2 {
-      font-weight: normal;
-      margin-bottom: 40px;
-      color: #555;
-    }
-
-    .section {
-      margin-bottom: 50px;
-    }
-
-    .open {
+    .hero h2 {
       font-size: 22px;
-      font-weight: bold;
+      font-weight: 400;
+      margin-bottom: 24px;
+      opacity: 0.9;
     }
 
-    .menu p {
-      margin: 5px 0;
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background: black;
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      background: white;
+      color: black;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 120px 24px;
+    }
+
+    .section {
+      margin-bottom: 120px;
+    }
+
+    .section h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 32px;
+      color: #777;
+    }
+
+    .text {
+      font-size: 22px;
+      max-width: 760px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: white;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .menu-card h4 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .menu-card p {
+      color: #666;
+    }
+
+    .contact-box {
+      background: #111;
       color: white;
-      text-decoration: none;
-      margin-top: 15px;
+      padding: 48px;
+      border-radius: 32px;
+    }
+
+    .contact-box p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .mail {
+      font-size: 26px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+      transition: 0.2s ease;
+    }
+
+    .mail:hover {
+      opacity: 0.7;
+    }
+
+    .contact-sub {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      margin-bottom: 10px;
+    }
+
+    .mail {
+      font-size: 24px;
+      font-weight: 600;
+      display: block;
+      transition: 0.2s ease;
+    }
+
+    .mail:hover {
+      opacity: 0.7;
     }
 
     footer {
-      margin-top: 60px;
+      text-align: center;
+      padding: 60px 20px;
       color: #777;
       font-size: 14px;
     }
 
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 52px;
+        letter-spacing: 4px;
+      }
+
+      .hero h2 {
+        font-size: 18px;
+      }
+
+      .text {
+        font-size: 18px;
+      }
+
+      .contact-box {
+        padding: 32px;
+      }
+
+      .mail {
+        font-size: 22px;
+        word-break: break-word;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-<div class="container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>FG COFFEE</h1>
+      <h2>Coffee Spot: Mezi Vraty</h2>
+      <p>První kávový víkend již brzy.</p>
 
-  <h1>FG COFFEE</h1>
-  <h2>Coffee Spot:  Mezi Vraty</h2>
+      <div class="buttons">
+        <a class="button" href="https://instagram.com/mezivraty" target="_blank">
+          Instagram
+        </a>
 
-  <div class="section">
-    <div class="open">
-      První kávový víkend již brzy!<br>
-      <br>
-      
+        <a class="button" href="#open">Otevírací doba</a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="section menu">
-    <h3>Co u nás na stánku najdete?</h3>
-    <p>esko drinky z výběrové kávy</p>
-    <p>batch brew</p>
-    <p>–</p>
-    <p>fermentovaná limonády</p>
-    <p>a něco sdladkého ke kávě</p>
-  </div>
+  <div class="container">
 
-  <div class="section">
-    <h3>O projektu</h3>
-    <p>
-      FG Coffee je projekt Filipa Grygara zaměřený na výběrovou kávu.
-      Mezi Vraty je víkendový coffee spot, který jak už napovídá se odehravá mezi vraty v Chyňavě.
-    </p>
-  </div>
+    <section class="section" id="open">
+      <h3>Otevřeno</h3>
 
-  <div class="section">
-    <h3>Kde nás najdeš</h3>
-    <p>Malá Strana 9<br>26707, Chyňava</p>
-    <a class="button" href="https://maps.app.goo.gl/oKUmRK318Bb8UwJN8"_blank">Otevřít mapu</a>
-  </div>
-  
-  <div class="section">
-  <h3>Napiš mi</h3>
-  <p>
-    Máš zájem o stánek na akci nebo jen dotaz?
-  </p>
-  <a class="button" href="mailto:ahoj@mezivraty.cz">
-    ahoj@mezivraty.cz
-  </a>
-</div>
+      <div class="text" style="margin-bottom:60px;">
+        První kávový víkend již brzy.<br><br>
 
- <div class="section">
-  <h3>Instagram</h3>
-  <a href="https://instagram.com/mezivraty" target="_blank">
-    @mezivraty
-  </a>
-</div>
+        Sobota 9:00–14:00<br>
+        Neděle 9:00–14:00
+      </div>
+
+      <h3>Co u nás najdeš</h3>
+
+      <div class="menu">
+
+        <div class="menu-card">
+          <h4>esko drinky</h4>
+          <p>z výběrové kávy</p>
+        </div>
+
+        <div class="menu-card">
+          <h4>batch brew</h4>
+          <p>filtrovaná káva</p>
+        </div>
+
+        <div class="menu-card">
+          <h4>fermentované limonády</h4>
+          <p>Bacilli a další</p>
+        </div>
+
+        <div class="menu-card">
+          <h4>něco sladkého</h4>
+          <p>ke kávě</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>O projektu</h3>
+
+      <div class="text">
+        FG Coffee je projekt Filipa Grygara zaměřený na výběrovou kávu z českých i zahraničních pražíren.
+        
+        Mezi Vraty je víkendový coffee spot v Chyňavě, který se odehrává doslova mezi vraty u nás na zahradě.
+
+        FG Coffee zároveň funguje i jako mobilní coffee bar na akcích, svatbách a oslavách.
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>O mně</h3>
+
+      <div class="text">
+        Jmenuju se Filip Grygar a jsem barista z Berouna.
+
+        Kávě se věnuju několik let a během té doby jsem měl možnost poznat různý přístupy ke kávě, práci za barem i samotný coffee kultuře.
+
+        FG Coffee vzniklo jako prostor, kde můžu všechno spojit dohromady.
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Kde nás najdeš</h3>
+
+      <div class="text">
+        Malá Strana 9<br>
+        267 07 Chyňava
+        <br><br>
+
+        <a class="button" style="background:#111;color:white;border:none;" href="https://maps.google.com" target="_blank">
+          Otevřít mapu
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="contact-box">
+        <h3 style="color:rgba(255,255,255,0.6);">Napiš mi</h3>
+
+        <p>
+          Máš zájem o coffee bar na akci, svatbu nebo oslavu?
+          Nebo jen dotaz?
+        </p>
+
+        <div class="contact-item">
+          <div class="contact-sub">email</div>
+          <a class="mail" href="mailto:ahoj@mezivraty.cz">
+            ahoj@mezivraty.cz
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-sub">telefon</div>
+          <a class="mail" href="tel:+420725861806">
+            +420 725 861 806
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
 
   <footer>
     Filip Grygar © 2026
   </footer>
-
-</div>
 
 </body>
 </html>
