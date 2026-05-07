@@ -3,305 +3,336 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>FG Coffee – Chyňava</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f5f3ef;
-    color: #111;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f3ef;
+      color: #111;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  .hero {
-    height: 100vh;
-    background:
-      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-      url('hero.jpeg');
-    background-size: cover;
-    background-position: 70% 75%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
-  }
-
-  .hero-content {
-    max-width: 700px;
-  }
-
-  .hero h1 {
-    font-size: 82px;
-    letter-spacing: 8px;
-    margin-bottom: 12px;
-    font-weight: 700;
-  }
-
-  .hero h2 {
-    font-size: 22px;
-    font-weight: 400;
-    margin-bottom: 24px;
-    opacity: 0.9;
-  }
-
-  .hero p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    opacity: 0.9;
-  }
-
-  .buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .button {
-    padding: 14px 28px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    transition: 0.3s ease;
-  }
-
-  .button:hover {
-    background: white;
-    color: black;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 120px 24px;
-  }
-
-  .section {
-    margin-bottom: 120px;
-  }
-
-  .section h3 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 32px;
-    color: #777;
-  }
-
-  .text {
-    font-size: 22px;
-    max-width: 760px;
-  }
-
-  .text p {
-    margin-bottom: 20px;
-  }
-
-  .menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-
-  .menu-card {
-    background: white;
-    padding: 28px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    transition: 0.25s ease;
-  }
-
-  .menu-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.08);
-  }
-
-  .menu-card h4 {
-    margin-bottom: 12px;
-    font-size: 20px;
-  }
-
-  .menu-card p {
-    color: #666;
-  }
-    .roastery-box {
-  background: white;
-  padding: 24px;
-  border-radius: 20px;
-  margin-top: 32px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-  max-width: 420px;
-}
-
-.roastery-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.roastery-name {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  line-height: 1.2;
-}
-
-.roastery-text {
-  color: #666;
-  font-size: 15px;
-}
-
-  .contact-box {
-    background: #111;
-    color: white;
-    padding: 48px;
-    border-radius: 32px;
-  }
-
-  .contact-box p {
-    margin-bottom: 20px;
-    font-size: 18px;
-  }
-
-  .mail {
-    font-size: 24px;
-    font-weight: 600;
-    display: block;
-    transition: 0.2s ease;
-  }
-
-  .mail:hover {
-    opacity: 0.7;
-  }
-
-  .contact-sub {
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-top: 4px;
-    margin-bottom: 24px;
-  }
-
-  .contact-item {
-    margin-bottom: 10px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 60px 20px;
-    color: #777;
-    font-size: 14px;
-  }
-
-  @media (max-width: 768px) {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     .hero {
-      background-position: 75% 80%;
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('hero.jpeg');
+      background-size: cover;
+      background-position: 70% 75%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero-content {
+      max-width: 700px;
     }
 
     .hero h1 {
-      font-size: 52px;
-      letter-spacing: 4px;
+      font-size: 82px;
+      letter-spacing: 8px;
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
     .hero h2 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .hero p {
       font-size: 18px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      background: white;
+      color: black;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 120px 24px;
+    }
+
+    .section {
+      margin-bottom: 120px;
+    }
+
+    .section h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 32px;
+      color: #777;
     }
 
     .text {
-      font-size: 18px;
+      font-size: 22px;
+      max-width: 760px;
+    }
+
+    .text p {
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: white;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      transition: 0.25s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+    }
+
+    .menu-card h4 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .menu-card p {
+      color: #666;
+    }
+
+    .roastery-box {
+      background: white;
+      padding: 22px;
+      border-radius: 20px;
+      margin-top: -18px;
+      margin-bottom: 34px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      max-width: 380px;
+    }
+
+    .roastery-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .roastery-name {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .roastery-text {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
     .contact-box {
-      padding: 32px;
+      background: #111;
+      color: white;
+      padding: 48px;
+      border-radius: 32px;
+    }
+
+    .contact-box p {
+      margin-bottom: 20px;
+      font-size: 18px;
     }
 
     .mail {
-      font-size: 22px;
-      word-break: break-word;
+      font-size: 24px;
+      font-weight: 600;
+      display: block;
+      transition: 0.2s ease;
     }
-  }
-</style>
+
+    .mail:hover {
+      opacity: 0.7;
+    }
+
+    .contact-sub {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+
+      .hero {
+        background-position: 75% 80%;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+        letter-spacing: 4px;
+      }
+
+      .hero h2 {
+        font-size: 18px;
+      }
+
+      .text {
+        font-size: 18px;
+      }
+
+      .contact-box {
+        padding: 32px;
+      }
+
+      .mail {
+        font-size: 22px;
+        word-break: break-word;
+      }
+
+      .roastery-box {
+        max-width: 100%;
+      }
+
+    }
+
+  </style>
 </head>
+
 <body>
 
   <section class="hero">
+
     <div class="hero-content">
+
       <h1>FG COFFEE</h1>
+
       <h2>Mobilní coffee bar</h2>
-      <p>Coffee Spot Mezi Vraty: První kávový víkend již brzy.</p>
+
+      <p>
+        Coffee Spot Mezi Vraty: První kávový víkend již brzy.
+      </p>
 
       <div class="buttons">
-        <a class="button" href="https://instagram.com/mezivraty" target="_blank">
+
+        <a class="button" href="https://instagram.com/fgcoffee_bar" target="_blank">
           Instagram
         </a>
 
-        <a class="button" href="#open">Coffee Spot</a>
+        <a class="button" href="#open">
+          Coffee Spot
+        </a>
+
       </div>
+
     </div>
+
   </section>
 
   <div class="container">
 
     <section class="section" id="open">
+
       <h3>Kdy bude Coffee Spot otevřen?</h3>
 
       <div class="text" style="margin-bottom:60px;">
-        První kávový víkend již brzy :D<br><br>
+
+        První kávový víkend již brzy :D
+
+        <br><br>
 
         Pátek ZAVŘENO<br>
         Sobota ZAVŘENO<br>
         Neděle ZAVŘENO
+
       </div>
-<div class="roastery-box">
 
-  <div class="roastery-label">
-    Tento víkend na mlýnku
-  </div>
+      <div class="roastery-box">
 
-  <div class="roastery-name">
-    BeBerry 
-  </div>
+        <div class="roastery-label">
+          Tento víkend na mlýnku
+        </div>
 
-  <div class="roastery-text">
-    Peru - El Paraiso • florální • broskev, jahoda, mandarinka
-  </div>
+        <div class="roastery-name">
+          BeBerry
+        </div>
 
-</div>
+        <div class="roastery-text">
+          Peru • El Paraiso<br>
+          florální • broskev • jahoda • mandarinka
+        </div>
 
-</div>
+      </div>
 
       <h3>Co u nás najdeš</h3>
 
       <div class="menu">
+
         <div class="menu-card">
           <h4>esko drinky</h4>
           <p>z výběrové kávy</p>
@@ -321,13 +352,17 @@
           <h4>něco sladkého</h4>
           <p>poctivé domácí dezerty</p>
         </div>
+
       </div>
+
     </section>
 
     <section class="section">
+
       <h3>O projektu</h3>
 
       <div class="text">
+
         <p>
           FG COFFEE nabízí mobilní coffee bar s důrazem na výběrovou kávu z renomovaných českých i zahraničních pražíren. Ideální řešení pro svatby, firemní akce i soukromé oslavy, kde chcete hostům dopřát perfektní kávový servis.
         </p>
@@ -335,41 +370,62 @@
         <p>
           Mezi Vraty je víkendový coffee spot v Chyňavě, který vznikl jako malý venkovní stánek. Otevřený je převážně o víkendech, jednou až dvakrát do měsíce. Jeho cílem je přinést výběrovou kávu i do menší obce a vytvořit příjemné místo pro setkávání.
         </p>
+
       </div>
+
     </section>
 
     <section class="section">
+
       <h3>O mně</h3>
 
       <div class="text">
+
         Jmenuji se Filip Grygar a ke kávě jsem se dostal už ve třinácti letech, kdy jsem absolvoval svůj první baristický kurz. Postupem času se z kávy stala přirozená součást mého života.
 
-Jako barista jsem začínal v Nižbořské kavárničce na zámku. Postupně jsem získával zkušenosti a dnes pracuji jako barista v berounské kavárně Mezi Dvorky. Během té doby jsem měl možnost sbírat zkušenosti i od osobností české kávové scény, jako je Ondřej Štökl, Tomo Laca a Petra Davies Veselá.
+        <br><br>
 
-V roce 2024 jsem vyhrál Barista Junior a zároveň se umístil v TOP 5 na Barista Cup Ostrava. Díky těmto soutěžím jsem získal další zkušenosti.
+        Jako barista jsem začínal v Nižbořské kavárničce na zámku. Postupně jsem získával zkušenosti a dnes pracuji jako barista v berounské kavárně Mezi Dvorky. Během té doby jsem měl možnost sbírat zkušenosti i od osobností české kávové scény, jako je Ondřej Štökl, Tomo Laca a Petra Davies Veselá.
 
-Baví mě rozmanitost v kávě, kterou chci předávat dál.
+        <br><br>
+
+        V roce 2024 jsem vyhrál Barista Junior a zároveň se umístil v TOP 5 na Barista Cup Ostrava. Díky těmto soutěžím jsem získal další zkušenosti.
+
+        <br><br>
+
+        Baví mě rozmanitost v kávě, kterou chci předávat dál.
+
       </div>
+
     </section>
 
     <section class="section">
+
       <h3>Kde nás najdeš</h3>
 
       <div class="text">
+
         FG Coffee<br>
         Malá Strana 9<br>
         267 07 Chyňava
+
         <br><br>
 
         <a class="button" style="background:#111;color:white;border:none;" href="https://maps.app.goo.gl/9WKU8FgarRScJSav8" target="_blank">
           Otevřít mapu
         </a>
+
       </div>
+
     </section>
 
     <section class="section">
+
       <div class="contact-box">
-        <h3 style="color:rgba(255,255,255,0.6);">Napiš mi</h3>
+
+        <h3 style="color:rgba(255,255,255,0.6);">
+          Napiš mi
+        </h3>
 
         <p>
           Máš zájem o coffee bar na akci, svatbu nebo oslavu?
@@ -377,19 +433,31 @@ Baví mě rozmanitost v kávě, kterou chci předávat dál.
         </p>
 
         <div class="contact-item">
-          <div class="contact-sub">email</div>
+
+          <div class="contact-sub">
+            email
+          </div>
+
           <a class="mail" href="mailto:ahoj@fgcoffee.cz">
             ahoj@fgcoffee.cz
           </a>
+
         </div>
 
         <div class="contact-item">
-          <div class="contact-sub">telefon</div>
+
+          <div class="contact-sub">
+            telefon
+          </div>
+
           <a class="mail" href="tel:+420725861806">
             +420 725 861 806
           </a>
+
         </div>
+
       </div>
+
     </section>
 
   </div>
