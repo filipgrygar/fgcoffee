@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -42,41 +41,38 @@
     .hero{
       height:100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
         url('hero.jpeg');
       background-size:cover;
-      background-position:center;
+      background-position:70% 75%;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
       color:white;
-      padding:24px;
+      padding:20px;
     }
 
     .hero-content{
-      max-width:760px;
+      max-width:700px;
     }
 
     .hero h1{
-      font-size:96px;
+      font-size:82px;
       letter-spacing:8px;
-      line-height:0.95;
-      margin-bottom:18px;
+      margin-bottom:12px;
       font-weight:700;
     }
 
     .hero h2{
-      font-size:24px;
+      font-size:22px;
       font-weight:400;
-      margin-bottom:22px;
+      margin-bottom:24px;
       opacity:0.9;
     }
 
     .hero p{
-      font-size:22px;
-      max-width:580px;
-      margin:auto;
+      font-size:18px;
       margin-bottom:40px;
       opacity:0.9;
     }
@@ -104,65 +100,68 @@
     }
 
     .container{
-      max-width:1150px;
+      max-width:1050px;
       margin:auto;
       padding:120px 24px;
     }
 
     .section{
-      margin-bottom:140px;
+      margin-bottom:120px;
     }
 
     .section h3{
-      font-size:13px;
+      font-size:14px;
       text-transform:uppercase;
       letter-spacing:3px;
-      margin-bottom:34px;
+      margin-bottom:32px;
       color:#777;
     }
 
     .text{
-      font-size:24px;
-      max-width:820px;
-      line-height:1.8;
+      font-size:22px;
+      max-width:760px;
+    }
+
+    .text p{
+      margin-bottom:20px;
     }
 
     .menu{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:22px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
     }
 
     .menu-card{
       background:white;
-      padding:34px;
-      border-radius:30px;
+      padding:28px;
+      border-radius:24px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
       transition:0.25s ease;
     }
 
     .menu-card:hover{
-      transform:translateY(-5px);
+      transform:translateY(-4px);
       box-shadow:0 18px 35px rgba(0,0,0,0.08);
     }
 
     .menu-card h4{
-      margin-bottom:14px;
-      font-size:24px;
+      margin-bottom:12px;
+      font-size:20px;
     }
 
     .menu-card p{
       color:#666;
-      font-size:16px;
     }
 
     .roastery-box{
       background:white;
-      padding:32px;
-      border-radius:32px;
+      padding:28px;
+      border-radius:28px;
+      margin-top:-10px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
-      max-width:560px;
-      border:1px solid rgba(0,0,0,0.05);
+      max-width:500px;
+      border:1px solid rgba(0,0,0,0.04);
       transition:0.25s ease;
     }
 
@@ -176,20 +175,20 @@
       letter-spacing:2px;
       text-transform:uppercase;
       color:#888;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     .roastery-name{
-      font-size:34px;
+      font-size:28px;
       font-weight:600;
-      margin-bottom:14px;
-      line-height:1.1;
+      margin-bottom:10px;
+      line-height:1.2;
     }
 
     .roastery-text{
       color:#666;
-      font-size:16px;
-      line-height:1.8;
+      font-size:15px;
+      line-height:1.7;
     }
 
     .slider-wrapper{
@@ -201,7 +200,7 @@
 
     .slider{
       overflow:hidden;
-      border-radius:40px;
+      border-radius:32px;
       width:100%;
     }
 
@@ -213,13 +212,13 @@
     .slides img{
       width:100%;
       min-width:100%;
-      height:720px;
+      height:620px;
       object-fit:cover;
     }
 
     .slider-btn{
-      width:56px;
-      height:56px;
+      width:54px;
+      height:54px;
       border:none;
       border-radius:999px;
       background:white;
@@ -234,7 +233,7 @@
     }
 
     .feature-banner{
-      height:720px;
+      height:680px;
       border-radius:42px;
       overflow:hidden;
       background:
@@ -248,7 +247,7 @@
     }
 
     .feature-overlay{
-      max-width:560px;
+      max-width:520px;
       color:white;
     }
 
@@ -257,25 +256,25 @@
       letter-spacing:2px;
       text-transform:uppercase;
       opacity:0.7;
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .feature-banner h2{
-      font-size:68px;
-      line-height:0.95;
-      margin-bottom:22px;
+      font-size:58px;
+      line-height:1;
+      margin-bottom:20px;
     }
 
     .feature-banner p{
       font-size:20px;
       line-height:1.7;
       opacity:0.9;
-      margin-bottom:32px;
+      margin-bottom:30px;
     }
 
     .feature-banner a{
       display:inline-block;
-      padding:15px 30px;
+      padding:14px 28px;
       border-radius:999px;
       background:white;
       color:black;
@@ -285,18 +284,17 @@
     .contact-box{
       background:#111;
       color:white;
-      padding:56px;
-      border-radius:40px;
+      padding:48px;
+      border-radius:32px;
     }
 
     .contact-box p{
-      margin-bottom:24px;
-      font-size:20px;
-      opacity:0.85;
+      margin-bottom:20px;
+      font-size:18px;
     }
 
     .mail{
-      font-size:28px;
+      font-size:24px;
       font-weight:600;
       display:block;
       transition:0.2s ease;
@@ -308,14 +306,15 @@
 
     .contact-sub{
       font-size:12px;
-      letter-spacing:2px;
+      letter-spacing:1px;
       text-transform:uppercase;
       color:rgba(255,255,255,0.5);
-      margin-bottom:12px;
+      margin-top:4px;
+      margin-bottom:24px;
     }
 
     .contact-item{
-      margin-bottom:26px;
+      margin-bottom:10px;
     }
 
     footer{
@@ -328,11 +327,11 @@
     @media (max-width:768px){
 
       .hero{
-        padding:120px 24px;
+        background-position:75% 80%;
       }
 
       .hero h1{
-        font-size:58px;
+        font-size:52px;
         letter-spacing:4px;
       }
 
@@ -340,24 +339,21 @@
         font-size:18px;
       }
 
-      .hero p{
-        font-size:18px;
-      }
-
-      .container{
-        padding:90px 20px;
-      }
-
-      .section{
-        margin-bottom:100px;
-      }
-
       .text{
         font-size:18px;
       }
 
+      .contact-box{
+        padding:32px;
+      }
+
+      .mail{
+        font-size:22px;
+        word-break:break-word;
+      }
+
       .slides img{
-        height:340px;
+        height:320px;
       }
 
       .slider-wrapper{
@@ -371,31 +367,21 @@
       }
 
       .feature-banner{
-        height:520px;
+        height:500px;
         padding:32px;
       }
 
       .feature-banner h2{
-        font-size:42px;
+        font-size:40px;
       }
 
       .feature-banner p{
         font-size:17px;
       }
 
-      .contact-box{
-        padding:34px;
-      }
-
-      .mail{
-        font-size:22px;
-        word-break:break-word;
-      }
-
     }
 
   </style>
-
 </head>
 
 <body>
@@ -409,8 +395,7 @@
       <h2>Mobilní coffee bar</h2>
 
       <p>
-        Výběrová káva, minimalistický setup
-        a příjemná atmosféra.
+        Coffee Spot Mezi Vraty: První kávový víkend již brzy.
       </p>
 
       <div class="buttons">
@@ -437,13 +422,13 @@
 
       <div class="text" style="margin-bottom:60px;">
 
-        První kávový víkend v Chyňavě již brzy.
+        První kávový víkend v Chyňavě již brzy :D
 
         <br><br>
 
-        Pátek (15.5.) — ZAVŘENO<br>
-        Sobota (16.5.) — ZAVŘENO<br>
-        Neděle (17.5.) — ZAVŘENO
+        Pátek (15.5.) - ZAVŘENO<br>
+        Sobota (16.5.) - ZAVŘENO<br>
+        Neděle (17.5.) - ZAVŘENO
 
       </div>
 
@@ -464,7 +449,7 @@
         </div>
 
         <div class="roastery-text">
-          Brazílie — Castanhas do Brazil
+          Brazílie - Castanhas do Brazil
           <br><br>
           hořká čokoláda • nugát • lískové oříšky
         </div>
@@ -480,23 +465,23 @@
       <div class="menu">
 
         <div class="menu-card">
-          <h4>Espresso drinky</h4>
-          <p>Z výběrové kávy z českých i zahraničních pražíren.</p>
+          <h4>esko drinky</h4>
+          <p>z výběrové kávy</p>
         </div>
 
         <div class="menu-card">
-          <h4>Hand brew</h4>
-          <p>Precizně připravená filtrovaná káva a V60.</p>
+          <h4>hand brew</h4>
+          <p>precizně připravená V60</p>
         </div>
 
         <div class="menu-card">
-          <h4>Fermentované limonády</h4>
-          <p>Bacilli a další řemeslné limonády z celého ovoce.</p>
+          <h4>fermentované limonády</h4>
+          <p>Bacilli - řemeslné limonády z celého ovoce</p>
         </div>
 
         <div class="menu-card">
-          <h4>Něco sladkého</h4>
-          <p>Domácí dezerty ke kávě a víkendové speciality.</p>
+          <h4>něco sladkého</h4>
+          <p>poctivé domácí dezerty ke kávě</p>
         </div>
 
       </div>
@@ -509,13 +494,13 @@
 
       <div class="text">
 
-        FG Coffee je projekt zaměřený na výběrovou kávu,
-        mobilní coffee bar a víkendový coffee spot Mezi Vraty v Chyňavě.
+        <p>
+          FG COFFEE nabízí mobilní coffee bar s důrazem na výběrovou kávu z renomovaných českých i zahraničních pražíren. Ideální řešení pro svatby, firemní akce i soukromé oslavy, kde chcete hostům dopřát perfektní kávový servis.
+        </p>
 
-        <br><br>
-
-        Cílem je vytvářet prostor, kde se propojuje dobrá káva,
-        čistý vizuál a příjemná atmosféra.
+        <p>
+          Mezi Vraty je víkendový coffee spot v Chyňavě, který vznikl jako malý venkovní stánek. Otevřený je převážně o víkendech, jednou až dvakrát do měsíce. Jeho cílem je přinést výběrovou kávu i do menší obce a vytvořit příjemné místo pro setkávání.
+        </p>
 
       </div>
 
@@ -527,20 +512,19 @@
 
       <div class="text">
 
-        Jmenuji se Filip Grygar a ke kávě jsem se dostal už ve třinácti letech,
-        kdy jsem absolvoval svůj první baristický kurz.
+        Jmenuji se Filip Grygar a ke kávě jsem se dostal už ve třinácti letech, kdy jsem absolvoval svůj první baristický kurz. Postupem času se z kávy stala přirozená součást mého života.
 
         <br><br>
 
-        Jako barista jsem začínal v Nižbořské kavárničce na zámku.
-        Dnes pracuji v berounské kavárně Mezi Dvorky
-        a během posledních let jsem měl možnost sbírat zkušenosti
-        od osobností české kávové scény.
+        Jako barista jsem začínal v Nižbořské kavárničce na zámku. Postupně jsem získával zkušenosti a dnes pracuji jako barista v berounské kavárně Mezi Dvorky. Během té doby jsem měl možnost sbírat zkušenosti i od osobností české kávové scény, jako je Ondřej Štökl, Tomo Laca a Petra Davies Veselá.
 
         <br><br>
 
-        V roce 2024 jsem vyhrál Barista roku Junior
-        a umístil se v TOP 5 na Barista Cup Ostrava.
+        V roce 2024 jsem vyhrál Barista roku Junior a zároveň se umístil v TOP 5 na Barista Cup Ostrava. Díky těmto soutěžím jsem získal další zkušenosti.
+
+        <br><br>
+
+        Baví mě rozmanitost v kávě, kterou chci díky FG Coffee předávat dál.
 
       </div>
 
@@ -619,13 +603,8 @@
 
         <br><br>
 
-        <a class="button"
-           style="background:#111;color:white;border:none;"
-           href="https://maps.app.goo.gl/3f5YBni4mdB6dVNx6?g_st=ic"
-           target="_blank">
-
+        <a class="button" style="background:#111;color:white;border:none;" href="https://maps.app.goo.gl/3f5YBni4mdB6dVNx6?g_st=ic" target="_blank">
           Otevřít mapu
-
         </a>
 
       </div>
@@ -636,19 +615,19 @@
 
       <div class="contact-box">
 
-        <h3 style="color:rgba(255,255,255,0.6);margin-bottom:24px;">
+        <h3 style="color:rgba(255,255,255,0.6);">
           Napiš mi
         </h3>
 
         <p>
-          Máš zájem o coffee bar na akci,
-          svatbu nebo jen dotaz?
+          Máš zájem o coffee bar na akci, svatbu nebo oslavu?
+          Nebo jen dotaz?
         </p>
 
         <div class="contact-item">
 
           <div class="contact-sub">
-            Email
+            email
           </div>
 
           <a class="mail" href="mailto:ahoj@fgcoffee.cz">
@@ -660,15 +639,11 @@
         <div class="contact-item">
 
           <div class="contact-sub">
-            Instagram
+            instagram
           </div>
 
-          <a class="mail"
-             href="https://instagram.com/fgcoffee_bar"
-             target="_blank">
-
+          <a class="mail" href="https://instagram.com/fgcoffee_bar" target="_blank">
             @fgcoffee_bar
-
           </a>
 
         </div>
