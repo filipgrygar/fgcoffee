@@ -6,6 +6,8 @@
 
   <title>FG Coffee — Kurzy</title>
 
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,16 +21,16 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:'Inter',sans-serif;
       background:#f5f3ef;
       color:#111;
       line-height:1.7;
       -webkit-font-smoothing:antialiased;
-    }
-
-    html{
-      scroll-behavior:smooth;
     }
 
     a{
@@ -83,6 +85,12 @@
       border-radius:32px;
       overflow:hidden;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
+      transition:0.25s ease;
+    }
+
+    .course-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 35px rgba(0,0,0,0.08);
     }
 
     .course-card img{
@@ -141,43 +149,15 @@
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
     }
 
-    .calendar-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:30px;
-    }
-
-    .calendar-card{
-      border:1px solid #ececec;
-      border-radius:24px;
-      padding:24px;
-      transition:0.25s ease;
-      background:#fafafa;
-    }
-
-    .calendar-card:hover{
-      transform:translateY(-4px);
-      background:white;
-    }
-
-    .calendar-date{
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:2px;
-      color:#777;
-      margin-bottom:10px;
-    }
-
     .calendar-title{
-      font-size:24px;
+      font-size:28px;
       font-weight:600;
       margin-bottom:12px;
     }
 
     .calendar-text{
       color:#666;
-      font-size:15px;
+      font-size:17px;
     }
 
     footer{
@@ -210,47 +190,23 @@
         height:240px;
       }
 
-      .calendar-grid{
-        grid-template-columns:1fr;
-      }
-
       .calendar-box{
         padding:24px;
       }
-      .contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-  width:100%;
-  padding:18px 20px;
-  border:none;
-  border-radius:20px;
-  background:#f5f5f5;
-  font-family:'Inter',sans-serif;
-  font-size:16px;
-  outline:none;
-}
+      .course-content{
+        padding:26px;
+      }
 
-.contact-form textarea{
-  min-height:160px;
-  resize:vertical;
-}
-
-.contact-form button{
-  align-self:flex-start;
-  border:none;
-  cursor:pointer;
-}
+      .course-content h4{
+        font-size:24px;
+      }
 
     }
 
   </style>
 </head>
+
 <body>
 
   <section class="hero">
@@ -261,11 +217,12 @@
       Domácí espresso, latte art, práce s mlýnkem nebo úvod do výběrové kávy.
       Individuální i skupinové workshopy pod FG Coffee.
     </p>
+
     <br><br>
 
-<a class="button" href="index.html">
-  ← Zpět na hlavní stránku
-</a>
+    <a class="button" href="index.html">
+      ← Zpět na hlavní stránku
+    </a>
 
   </section>
 
@@ -329,6 +286,32 @@
 
         </div>
 
+        <div class="course-card">
+
+          <img src="gallery1.jpg">
+
+          <div class="course-content">
+
+            <h4>Filtrovaná káva</h4>
+
+            <p>
+              Základy V60, práce s recepty, mletím a extrakcí pro čistý a vyvážený filtr.
+            </p>
+
+            <div class="course-meta">
+              <div class="tag">V60 & batch brew</div>
+              <div class="tag">začátečníci</div>
+              <div class="tag">praxe</div>
+            </div>
+
+            <a class="button" href="mailto:ahoj@fgcoffee.cz">
+              Rezervovat kurz
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
 
     </section>
@@ -339,122 +322,21 @@
 
       <div class="calendar-box">
 
-        <div class="calendar-grid">
+        <div class="calendar-title">
+          Aktuálně nejsou vypsané žádné termíny
+        </div>
 
-          <div class="calendar-card">
-
-            <div class="calendar-date">
-              Sobota 24. 5.
-            </div>
-
-            <div class="calendar-title">
-              Espresso basics
-            </div>
-
-            <div class="calendar-text">
-              Individuální workshop pro domácí přípravu espressa.
-            </div>
-
-          </div>
-
-          <div class="calendar-card">
-
-            <div class="calendar-date">
-              Neděle 1. 6.
-            </div>
-
-            <div class="calendar-title">
-              Latte art
-            </div>
-
-            <div class="calendar-text">
-              Základy napěnění mléka a pouring techniky.
-            </div>
-
-          </div>
-
-          <div class="calendar-card">
-
-            <div class="calendar-date">
-              Sobota 14. 6.
-            </div>
-
-            <div class="calendar-title">
-              Filter workshop
-            </div>
-
-            <div class="calendar-text">
-              V60, recepty, mletí a práce s extrakcí.
-            </div>
-
-          </div>
-
+        <div class="calendar-text">
+          Pokud máš zájem o individuální workshop nebo kurz,
+          napiš mi na
+          <a href="mailto:ahoj@fgcoffee.cz">
+            ahoj@fgcoffee.cz
+          </a>
         </div>
 
       </div>
 
     </section>
-    <section class="section">
-
-  <h3>Poptávka kurzu</h3>
-
-  <div class="calendar-box">
-
-    <form
-      action="mailto:ahoj@fgcoffee.cz"
-      method="post"
-      enctype="text/plain"
-      class="contact-form"
-    >
-
-      <input
-        type="text"
-        name="Jméno"
-        placeholder="Jméno"
-        required
-      >
-
-      <input
-        type="email"
-        name="Email"
-        placeholder="E-mail"
-        required
-      >
-
-      <select name="Kurz">
-
-        <option>
-          Domácí espresso
-        </option>
-
-        <option>
-          Latte art basics
-        </option>
-
-        <option>
-          Filter workshop
-        </option>
-
-        <option>
-          Cupping
-        </option>
-
-      </select>
-
-      <textarea
-        name="Zpráva"
-        placeholder="Napiš mi něco o sobě nebo o tom, co se chceš naučit :)"
-      ></textarea>
-
-      <button class="button" type="submit">
-        Odeslat rezervaci
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
 
   </div>
 
