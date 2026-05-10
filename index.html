@@ -38,6 +38,41 @@
       color:inherit;
     }
 
+    .topbar{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      padding:28px 42px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:100;
+    }
+
+    .logo{
+      color:white;
+      font-size:14px;
+      letter-spacing:3px;
+      font-weight:600;
+    }
+
+    .topbar nav{
+      display:flex;
+      gap:28px;
+    }
+
+    .topbar nav a{
+      color:white;
+      font-size:14px;
+      opacity:0.85;
+      transition:0.2s ease;
+    }
+
+    .topbar nav a:hover{
+      opacity:1;
+    }
+
     .hero{
       height:100vh;
       background:
@@ -120,10 +155,6 @@
     .text{
       font-size:20px;
       max-width:760px;
-    }
-
-    .text p{
-      margin-bottom:18px;
     }
 
     .menu{
@@ -321,6 +352,18 @@
 
     @media (max-width:768px){
 
+      .topbar{
+        padding:24px 20px;
+      }
+
+      .topbar nav{
+        gap:16px;
+      }
+
+      .topbar nav a{
+        font-size:13px;
+      }
+
       .hero{
         background-position:75% 80%;
       }
@@ -392,6 +435,30 @@
 </head>
 
 <body>
+
+  <header class="topbar">
+
+    <a href="index.html" class="logo">
+      FG COFFEE
+    </a>
+
+    <nav>
+
+      <a href="kurzy.html">
+        Kurzy
+      </a>
+
+      <a href="akce.html">
+        Coffee Bar
+      </a>
+
+      <a href="https://instagram.com/fgcoffee_bar" target="_blank">
+        Instagram
+      </a>
+
+    </nav>
+
+  </header>
 
   <section class="hero">
 
@@ -580,8 +647,7 @@
           </div>
 
           <h2>
-            Káva na akcích,
-            které mají atmosféru.
+            Káva na akcích, které mají atmosféru.
           </h2>
 
           <p>
@@ -589,7 +655,7 @@
             firemní eventy i soukromé oslavy.
           </p>
 
-          <a href="bar.html">
+          <a href="akce.html">
             Coffee bar na akce
           </a>
 
@@ -606,7 +672,7 @@
         <div class="feature-overlay">
 
           <div class="feature-label">
-            Kurzy
+            Kurzy & workshopy
           </div>
 
           <h2>
@@ -680,6 +746,18 @@
 
           <a class="mail" href="https://instagram.com/fgcoffee_bar" target="_blank">
             @fgcoffee_bar
+          </a>
+
+        </div>
+
+        <div class="contact-item">
+
+          <div class="contact-sub">
+            telefon
+          </div>
+
+          <a class="mail" href="tel:+420725861806">
+            +420 725 861 806
           </a>
 
         </div>
