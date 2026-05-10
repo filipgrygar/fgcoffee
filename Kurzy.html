@@ -217,6 +217,35 @@
       .calendar-box{
         padding:24px;
       }
+      .contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;
+  padding:18px 20px;
+  border:none;
+  border-radius:20px;
+  background:#f5f5f5;
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  outline:none;
+}
+
+.contact-form textarea{
+  min-height:160px;
+  resize:vertical;
+}
+
+.contact-form button{
+  align-self:flex-start;
+  border:none;
+  cursor:pointer;
+}
 
     }
 
@@ -365,6 +394,67 @@
       </div>
 
     </section>
+    <section class="section">
+
+  <h3>Poptávka kurzu</h3>
+
+  <div class="calendar-box">
+
+    <form
+      action="mailto:ahoj@fgcoffee.cz"
+      method="post"
+      enctype="text/plain"
+      class="contact-form"
+    >
+
+      <input
+        type="text"
+        name="Jméno"
+        placeholder="Jméno"
+        required
+      >
+
+      <input
+        type="email"
+        name="Email"
+        placeholder="E-mail"
+        required
+      >
+
+      <select name="Kurz">
+
+        <option>
+          Domácí espresso
+        </option>
+
+        <option>
+          Latte art basics
+        </option>
+
+        <option>
+          Filter workshop
+        </option>
+
+        <option>
+          Cupping
+        </option>
+
+      </select>
+
+      <textarea
+        name="Zpráva"
+        placeholder="Napiš mi něco o sobě nebo o tom, co se chceš naučit :)"
+      ></textarea>
+
+      <button class="button" type="submit">
+        Odeslat rezervaci
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
 
   </div>
 
