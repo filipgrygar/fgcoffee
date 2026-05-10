@@ -152,34 +152,36 @@
     .menu-card p {
       color: #666;
     }
-    .course-grid{
+    .course-home{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:50px;
   align-items:center;
 }
 
-.course-image img{
+.course-home-image img{
   width:100%;
   height:520px;
   object-fit:cover;
-  border-radius:28px;
+  border-radius:32px;
 }
 
-.course-content{
+.course-home-content{
   width:100%;
 }
 
 @media (max-width:768px){
 
-  .course-grid{
+  .course-home{
     grid-template-columns:1fr;
     gap:24px;
   }
 
-  .course-image img{
+  .course-home-image img{
     height:260px;
   }
+
+}
 
 }
 
@@ -462,52 +464,6 @@
 
     <section class="section">
 
-  <h3>Kurzy</h3>
-
-  <div class="course-grid">
-
-    <div class="course-image">
-
-      <img src="gallery4.jpg">
-
-    </div>
-
-    <div class="course-content">
-
-      <div class="text">
-
-        Nauč se připravit lepší espresso, správně napěnit mléko nebo pochopit základy výběrové kávy.
-
-        <br><br>
-
-        Kurzy jsou vhodné pro začátečníky i domácí nadšence.
-
-        <br><br>
-
-        • domácí espresso  
-        <br>
-        • latte art basics  
-        <br>
-        • hand brew   
-        <br>
-        • cupping   
-
-      </div>
-
-      <br><br>
-
-      <a class="button" style="background:#111;color:white;border:none;" href="mailto:ahoj@fgcoffee.cz">
-        Mám zájem o kurz
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-    <section class="section">
-
       <h3>O mně</h3>
 
       <div class="text">
@@ -565,6 +521,48 @@
       </div>
 
     </section>
+    <section class="section">
+
+  <h3>Kurzy & workshopy</h3>
+
+  <div class="course-home">
+
+    <div class="course-home-image">
+
+      <img src="gallery4.jpg">
+
+    </div>
+
+    <div class="course-home-content">
+
+      <div class="text">
+
+        Individuální i skupinové workshopy zaměřené na espresso,
+        latte art nebo filtrovanou kávu.
+
+        <br><br>
+
+        Pro domácí nadšence i úplné začátečníky.
+
+      </div>
+
+      <br><br>
+
+      <a
+        class="button"
+        style="background:#111;color:white;border:none;"
+        href="kurzy.html"
+      >
+
+        Zobrazit kurzy
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
     <section class="section">
 
