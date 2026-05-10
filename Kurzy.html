@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FG Coffee — Kurzy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f5f3ef;
+      color:#111;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .hero{
+      padding:140px 24px 100px;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:72px;
+      letter-spacing:6px;
+      margin-bottom:18px;
+    }
+
+    .hero p{
+      font-size:22px;
+      max-width:760px;
+      margin:auto;
+      color:#555;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:0 24px 120px;
+    }
+
+    .section{
+      margin-bottom:120px;
+    }
+
+    .section h3{
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:3px;
+      margin-bottom:32px;
+      color:#777;
+    }
+
+    .course-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+
+    .course-card{
+      background:white;
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .course-card img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+    }
+
+    .course-content{
+      padding:34px;
+    }
+
+    .course-content h4{
+      font-size:30px;
+      margin-bottom:14px;
+    }
+
+    .course-content p{
+      color:#666;
+      margin-bottom:24px;
+      font-size:17px;
+    }
+
+    .course-meta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:26px;
+    }
+
+    .tag{
+      background:#f3f3f3;
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:14px;
+    }
+
+    .button{
+      display:inline-block;
+      padding:14px 28px;
+      border-radius:999px;
+      background:#111;
+      color:white;
+      transition:0.25s ease;
+    }
+
+    .button:hover{
+      transform:translateY(-2px);
+      opacity:0.92;
+    }
+
+    .calendar-box{
+      background:white;
+      border-radius:32px;
+      padding:40px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .calendar-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .calendar-card{
+      border:1px solid #ececec;
+      border-radius:24px;
+      padding:24px;
+      transition:0.25s ease;
+      background:#fafafa;
+    }
+
+    .calendar-card:hover{
+      transform:translateY(-4px);
+      background:white;
+    }
+
+    .calendar-date{
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:#777;
+      margin-bottom:10px;
+    }
+
+    .calendar-title{
+      font-size:24px;
+      font-weight:600;
+      margin-bottom:12px;
+    }
+
+    .calendar-text{
+      color:#666;
+      font-size:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:60px 20px;
+      color:#777;
+      font-size:14px;
+    }
+
+    @media (max-width:768px){
+
+      .hero{
+        padding:100px 20px 80px;
+      }
+
+      .hero h1{
+        font-size:46px;
+        letter-spacing:4px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .course-grid{
+        grid-template-columns:1fr;
+      }
+
+      .course-card img{
+        height:240px;
+      }
+
+      .calendar-grid{
+        grid-template-columns:1fr;
+      }
+
+      .calendar-box{
+        padding:24px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+
+    <h1>KURZY & WORKSHOPY</h1>
+
+    <p>
+      Domácí espresso, latte art, práce s mlýnkem nebo úvod do výběrové kávy.
+      Individuální i skupinové workshopy pod FG Coffee.
+    </p>
+
+  </section>
+
+  <div class="container">
+
+    <section class="section">
+
+      <h3>Kurzy</h3>
+
+      <div class="course-grid">
+
+        <div class="course-card">
+
+          <img src="gallery4.jpg">
+
+          <div class="course-content">
+
+            <h4>Domácí espresso</h4>
+
+            <p>
+              Naučíš se nastavení mlýnku, práci s extrakcí, správné espresso a základy workflow.
+            </p>
+
+            <div class="course-meta">
+              <div class="tag">2–3 hodiny</div>
+              <div class="tag">začátečníci</div>
+              <div class="tag">1–2 osoby</div>
+            </div>
+
+            <a class="button" href="mailto:ahoj@fgcoffee.cz">
+              Rezervovat kurz
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="course-card">
+
+          <img src="gallery2.jpg">
+
+          <div class="course-content">
+
+            <h4>Latte art basics</h4>
+
+            <p>
+              Jak správně napěnit mléko a vytvořit první srdíčko nebo tulip.
+            </p>
+
+            <div class="course-meta">
+              <div class="tag">90 minut</div>
+              <div class="tag">mléčné nápoje</div>
+              <div class="tag">praxe</div>
+            </div>
+
+            <a class="button" href="mailto:ahoj@fgcoffee.cz">
+              Rezervovat kurz
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <h3>Nejbližší termíny</h3>
+
+      <div class="calendar-box">
+
+        <div class="calendar-grid">
+
+          <div class="calendar-card">
+
+            <div class="calendar-date">
+              Sobota 24. 5.
+            </div>
+
+            <div class="calendar-title">
+              Espresso basics
+            </div>
+
+            <div class="calendar-text">
+              Individuální workshop pro domácí přípravu espressa.
+            </div>
+
+          </div>
+
+          <div class="calendar-card">
+
+            <div class="calendar-date">
+              Neděle 1. 6.
+            </div>
+
+            <div class="calendar-title">
+              Latte art
+            </div>
+
+            <div class="calendar-text">
+              Základy napěnění mléka a pouring techniky.
+            </div>
+
+          </div>
+
+          <div class="calendar-card">
+
+            <div class="calendar-date">
+              Sobota 14. 6.
+            </div>
+
+            <div class="calendar-title">
+              Filter workshop
+            </div>
+
+            <div class="calendar-text">
+              V60, recepty, mletí a práce s extrakcí.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    FG Coffee © 2026
+  </footer>
+
+</body>
+</html>
