@@ -223,6 +223,7 @@
       background:#111;
       color:white;
       cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
     }
 
     .calendar-day.active:hover{
@@ -248,7 +249,9 @@
       box-shadow:0 10px 25px rgba(0,0,0,0.15);
     }
 
-    .calendar-day.active:hover .calendar-tooltip{
+    .calendar-day.active:hover .calendar-tooltip,
+    .calendar-day.active:active .calendar-tooltip,
+    .calendar-day.active:focus .calendar-tooltip{
       opacity:1;
     }
 
@@ -438,7 +441,7 @@
 
     <section class="section">
 
-      <h3>Kalendář workshopů</h3>
+      <h3>Kalendář kurzů</h3>
 
       <div class="calendar-modern">
 
@@ -455,7 +458,7 @@
             </h4>
 
             <span>
-              FG Coffee Workshops
+              FG Coffee 
             </span>
 
           </div>
@@ -499,9 +502,30 @@
     const workshops = [
       {
         date: "2026-05-10",
-        title: "Základní baristický kutz",
-        text: "",
+        title: "Základní baristický kurz",
+        text: "Kapacita: 4/4",
         status: "Již proběhlo ☕"
+      },
+
+      {
+        date: "2026-06-14",
+        title: "Základní latte art",
+        text: "Kapacita: 1/3",
+        status: "Volná místa"
+      },
+
+      {
+        date: "2026-07-10",
+        title: "Základní baristický kurz",
+        text: "Kapacita: 0/4",
+        status: "Volná místa"
+      },
+
+      {
+        date: "2026-06-28",
+        title: "Filtrovaná káva",
+        text: "Kapacita: 3ú4",
+        status: "Poslední místo"
       }
     ];
 
@@ -619,7 +643,9 @@
       if(currentMonthEvents.length > 0){
 
         info.innerHTML = `
-          Workshopy označené v kalendáři zobrazí detail po najetí myší ☕
+          MÁME VYPSANÉ TERMÍNY KURZŮ.
+          <br><br>
+          Klikni nebo najeď na označený datum pro detail kurzu ☕
         `;
 
       } else {
@@ -627,7 +653,7 @@
         info.innerHTML = `
           Momentálně nejsou vypsané další termíny.
           <br><br>
-          Pokud máš zájem o individuální workshop,
+          Pokud máš zájem o kurz,
           napiš mi na e-mail
           <strong>ahoj@fgcoffee.cz</strong>
         `;
