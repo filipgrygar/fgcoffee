@@ -144,36 +144,37 @@
 
     .calendar-modern{
       background:white;
-      border-radius:36px;
-      padding:42px;
+      border-radius:30px;
+      padding:30px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
+      max-width:620px;
     }
 
     .calendar-top{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      margin-bottom:34px;
+      margin-bottom:24px;
     }
 
     .calendar-current h4{
-      font-size:34px;
-      margin-bottom:4px;
+      font-size:24px;
+      margin-bottom:2px;
     }
 
     .calendar-current span{
       color:#777;
-      font-size:14px;
+      font-size:12px;
     }
 
     .calendar-nav{
-      width:52px;
-      height:52px;
+      width:42px;
+      height:42px;
       border:none;
       border-radius:999px;
       background:#f5f3ef;
       cursor:pointer;
-      font-size:18px;
+      font-size:16px;
       transition:0.2s ease;
     }
 
@@ -185,9 +186,9 @@
     .calendar-days{
       display:grid;
       grid-template-columns:repeat(7,1fr);
-      margin-bottom:14px;
-      color:#888;
-      font-size:13px;
+      margin-bottom:10px;
+      color:#999;
+      font-size:11px;
       text-transform:uppercase;
       letter-spacing:1px;
     }
@@ -199,17 +200,19 @@
     .calendar-grid-modern{
       display:grid;
       grid-template-columns:repeat(7,1fr);
-      gap:12px;
+      gap:8px;
     }
 
     .calendar-day{
       aspect-ratio:1/1;
       background:#f5f3ef;
-      border-radius:20px;
+      border-radius:14px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:18px;
+      font-size:14px;
+      position:relative;
+      transition:0.2s ease;
     }
 
     .calendar-day.empty{
@@ -219,23 +222,43 @@
     .calendar-day.active{
       background:#111;
       color:white;
-      font-weight:600;
+      cursor:pointer;
     }
 
-    .calendar-info{
-      margin-top:34px;
-      padding-top:28px;
+    .calendar-day.active:hover{
+      transform:translateY(-2px);
+    }
+
+    .calendar-tooltip{
+      position:absolute;
+      bottom:115%;
+      left:50%;
+      transform:translateX(-50%);
+      background:#111;
+      color:white;
+      padding:12px 14px;
+      border-radius:14px;
+      width:190px;
+      font-size:12px;
+      line-height:1.5;
+      opacity:0;
+      pointer-events:none;
+      transition:0.2s ease;
+      z-index:10;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .calendar-day.active:hover .calendar-tooltip{
+      opacity:1;
+    }
+
+    .calendar-empty{
+      margin-top:24px;
+      padding-top:20px;
       border-top:1px solid #ececec;
       color:#666;
-      line-height:1.8;
-    }
-
-    .calendar-event{
-      margin-bottom:20px;
-    }
-
-    .calendar-event strong{
-      color:#111;
+      font-size:14px;
+      line-height:1.7;
     }
 
     footer{
@@ -277,26 +300,26 @@
       }
 
       .calendar-modern{
-        padding:24px;
-        border-radius:28px;
+        padding:22px;
+        border-radius:24px;
       }
 
       .calendar-current h4{
-        font-size:26px;
+        font-size:20px;
       }
 
       .calendar-grid-modern{
-        gap:8px;
+        gap:6px;
       }
 
       .calendar-day{
-        border-radius:14px;
-        font-size:15px;
+        border-radius:10px;
+        font-size:13px;
       }
 
-      .calendar-nav{
-        width:42px;
-        height:42px;
+      .calendar-tooltip{
+        width:160px;
+        font-size:11px;
       }
 
     }
@@ -458,7 +481,7 @@
         <div class="calendar-grid-modern" id="calendarGrid">
         </div>
 
-        <div class="calendar-info" id="calendarInfo">
+        <div class="calendar-empty" id="calendarInfo">
         </div>
 
       </div>
@@ -476,8 +499,8 @@
     const workshops = [
       {
         date: "2026-05-10",
-        title: "Filtrovaná káva",
-        text: "Kurz zaměřený na základy filtrované kávy.",
+        title: "Základní baristický kutz",
+        text: "",
         status: "Již proběhlo ☕"
       }
     ];
@@ -549,7 +572,33 @@
           dayElement.classList.add("active");
         }
 
-        dayElement.innerText = day;
+        dayElement.innerHTML = `
+          ${day}
+        `;
+
+        if(workshop){
+
+          dayElement.innerHTML += `
+
+            <div class="calendar-tooltip">
+
+              <strong>
+                ${workshop.title}
+              </strong>
+
+              <br>
+
+              ${workshop.text}
+
+              <br><br>
+
+              ${workshop.status}
+
+            </div>
+
+          `;
+
+        }
 
         grid.appendChild(dayElement);
 
@@ -569,38 +618,18 @@
 
       if(currentMonthEvents.length > 0){
 
-        info.innerHTML = currentMonthEvents.map(event => `
-
-          <div class="calendar-event">
-
-            <strong>
-              ${event.title}
-            </strong>
-
-            <br>
-
-            ${event.text}
-
-            <br><br>
-
-            ${event.status}
-
-          </div>
-
-        `).join("");
+        info.innerHTML = `
+          Workshopy označené v kalendáři zobrazí detail po najetí myší ☕
+        `;
 
       } else {
 
         info.innerHTML = `
-
           Momentálně nejsou vypsané další termíny.
-
           <br><br>
-
           Pokud máš zájem o individuální workshop,
           napiš mi na e-mail
           <strong>ahoj@fgcoffee.cz</strong>
-
         `;
 
       }
