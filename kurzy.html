@@ -142,22 +142,100 @@
       opacity:0.92;
     }
 
-    .calendar-box{
+    .calendar-modern{
       background:white;
-      border-radius:32px;
-      padding:40px;
+      border-radius:36px;
+      padding:42px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
     }
 
-    .calendar-title{
-      font-size:28px;
-      font-weight:600;
-      margin-bottom:12px;
+    .calendar-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:34px;
     }
 
-    .calendar-text{
+    .calendar-current h4{
+      font-size:34px;
+      margin-bottom:4px;
+    }
+
+    .calendar-current span{
+      color:#777;
+      font-size:14px;
+    }
+
+    .calendar-nav{
+      width:52px;
+      height:52px;
+      border:none;
+      border-radius:999px;
+      background:#f5f3ef;
+      cursor:pointer;
+      font-size:18px;
+      transition:0.2s ease;
+    }
+
+    .calendar-nav:hover{
+      background:#111;
+      color:white;
+    }
+
+    .calendar-days{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      margin-bottom:14px;
+      color:#888;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .calendar-days div{
+      text-align:center;
+    }
+
+    .calendar-grid-modern{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:12px;
+    }
+
+    .calendar-day{
+      aspect-ratio:1/1;
+      background:#f5f3ef;
+      border-radius:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+    }
+
+    .calendar-day.empty{
+      background:transparent;
+    }
+
+    .calendar-day.active{
+      background:#111;
+      color:white;
+      font-weight:600;
+    }
+
+    .calendar-info{
+      margin-top:34px;
+      padding-top:28px;
+      border-top:1px solid #ececec;
       color:#666;
-      font-size:17px;
+      line-height:1.8;
+    }
+
+    .calendar-event{
+      margin-bottom:20px;
+    }
+
+    .calendar-event strong{
+      color:#111;
     }
 
     footer{
@@ -190,16 +268,35 @@
         height:240px;
       }
 
-      .calendar-box{
-        padding:24px;
-      }
-
       .course-content{
         padding:26px;
       }
 
       .course-content h4{
         font-size:24px;
+      }
+
+      .calendar-modern{
+        padding:24px;
+        border-radius:28px;
+      }
+
+      .calendar-current h4{
+        font-size:26px;
+      }
+
+      .calendar-grid-modern{
+        gap:8px;
+      }
+
+      .calendar-day{
+        border-radius:14px;
+        font-size:15px;
+      }
+
+      .calendar-nav{
+        width:42px;
+        height:42px;
       }
 
     }
@@ -243,13 +340,13 @@
             <h4>Základní baristický kurz</h4>
 
             <p>
-              Dozvíš  se zakaldní informace ke kávě a její přípravě. Naučíš se správně připravit espresso, pracovat s mlékem a osvojíš si workflow za barem.
+              Dozvíš se základní informace ke kávě a její přípravě. Naučíš se správně připravit espresso, pracovat s mlékem a osvojíš si workflow za barem.
             </p>
 
             <div class="course-meta">
               <div class="tag">4 hodiny</div>
               <div class="tag">pro kávové nadšence a kavárny</div>
-              <div class="tag">3-4 osoby</div>
+              <div class="tag">3–4 osoby</div>
             </div>
 
             <a class="button" href="mailto:ahoj@fgcoffee.cz">
@@ -269,13 +366,13 @@
             <h4>Základní latte art</h4>
 
             <p>
-              Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán. Provedu tě správnou technikou šlehalní a dozvíš se všechny potřebné informace k příslušenství.
+              Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán. Provedu tě správnou technikou šlehání a dozvíš se vše potřebné k příslušenství.
             </p>
 
             <div class="course-meta">
               <div class="tag">4 hodiny</div>
-              <div class="tag">pokročilý kávový nadšenci a kavárny</div>
-              <div class="tag">2-3 osoby</div>
+              <div class="tag">pokročilejší nadšenci a kavárny</div>
+              <div class="tag">2–3 osoby</div>
             </div>
 
             <a class="button" href="mailto:ahoj@fgcoffee.cz">
@@ -292,15 +389,15 @@
 
           <div class="course-content">
 
-            <h4>Skupinový cupping </h4>
+            <h4>Skupinový cupping</h4>
 
             <p>
-              Zajímá tě rozmanitost chutí v kávě? Degustace káv určená pro všechny kávové nadšnce ti je ukáže. Společně tě celým cuppingem provedeme, ochutnáme nekolik vzorků káv a porovnáme jejich chutě. 
+              Zajímá tě rozmanitost chutí v kávě? Degustace určená pro všechny kávové nadšence ti ukáže rozdíly mezi jednotlivými kávami a jejich chutěmi.
             </p>
 
             <div class="course-meta">
               <div class="tag">2 hodiny</div>
-              <div class="tag">pro všechny kávové nadšence</div>
+              <div class="tag">pro všechny nadšence</div>
               <div class="tag">až 11 osob</div>
             </div>
 
@@ -315,70 +412,214 @@
       </div>
 
     </section>
-<section class="section">
 
-  <h3>Termíny kurzů</h3>
+    <section class="section">
 
-  <div class="calendar-box">
+      <h3>Kalendář workshopů</h3>
 
-    <div class="calendar-grid">
+      <div class="calendar-modern">
 
-      <div class="calendar-card">
+        <div class="calendar-top">
 
-        <div class="calendar-date">
-          Neděle 10. 5. 2026
+          <button class="calendar-nav" onclick="changeMonth(-1)">
+            ←
+          </button>
+
+          <div class="calendar-current">
+
+            <h4 id="calendarMonth">
+              Květen 2026
+            </h4>
+
+            <span>
+              FG Coffee Workshops
+            </span>
+
+          </div>
+
+          <button class="calendar-nav" onclick="changeMonth(1)">
+            →
+          </button>
+
         </div>
 
-        <div class="calendar-title">
-          Filtrovaná káva
+        <div class="calendar-days">
+
+          <div>Po</div>
+          <div>Út</div>
+          <div>St</div>
+          <div>Čt</div>
+          <div>Pá</div>
+          <div>So</div>
+          <div>Ne</div>
+
         </div>
 
-        <div class="calendar-text">
+        <div class="calendar-grid-modern" id="calendarGrid">
+        </div>
 
-          Kurz zaměřený na základy filtrované kávy.
-
-          <br><br>
-
-          <strong>Již proběhlo ☕</strong>
-
+        <div class="calendar-info" id="calendarInfo">
         </div>
 
       </div>
 
-      <div class="calendar-card">
-
-        <div class="calendar-date">
-          Další termíny
-        </div>
-
-        <div class="calendar-title">
-          Aktuálně bez vypsaných kurzů.
-        </div>
-
-        <div class="calendar-text">
-
-          Nové termíny kurzů vypisujeme průběžně.
-
-          <br><br>
-
-          Pokud máš zájem o kurz,
-          napiš mi na e-mail ahoj@fgcoffee.cz
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
   </div>
 
   <footer>
     FG Coffee © 2026
   </footer>
+
+  <script>
+
+    const workshops = [
+      {
+        date: "2026-05-10",
+        title: "Filtrovaná káva",
+        text: "Kurz zaměřený na základy filtrované kávy.",
+        status: "Již proběhlo ☕"
+      }
+    ];
+
+    const monthNames = [
+      "Leden",
+      "Únor",
+      "Březen",
+      "Duben",
+      "Květen",
+      "Červen",
+      "Červenec",
+      "Srpen",
+      "Září",
+      "Říjen",
+      "Listopad",
+      "Prosinec"
+    ];
+
+    let currentDate = new Date();
+
+    function renderCalendar(){
+
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+
+      document.getElementById("calendarMonth").innerText =
+        `${monthNames[month]} ${year}`;
+
+      const grid = document.getElementById("calendarGrid");
+
+      grid.innerHTML = "";
+
+      const firstDay = new Date(year, month, 1);
+
+      let startDay = firstDay.getDay() - 1;
+
+      if(startDay < 0){
+        startDay = 6;
+      }
+
+      const daysInMonth =
+        new Date(year, month + 1, 0).getDate();
+
+      for(let i = 0; i < startDay; i++){
+
+        const empty = document.createElement("div");
+
+        empty.className = "calendar-day empty";
+
+        grid.appendChild(empty);
+
+      }
+
+      for(let day = 1; day <= daysInMonth; day++){
+
+        const dateString =
+          `${year}-${String(month + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+
+        const workshop =
+          workshops.find(w => w.date === dateString);
+
+        const dayElement =
+          document.createElement("div");
+
+        dayElement.className = "calendar-day";
+
+        if(workshop){
+          dayElement.classList.add("active");
+        }
+
+        dayElement.innerText = day;
+
+        grid.appendChild(dayElement);
+
+      }
+
+      const info = document.getElementById("calendarInfo");
+
+      const currentMonthEvents =
+        workshops.filter(w => {
+
+          const d = new Date(w.date);
+
+          return d.getMonth() === month &&
+                 d.getFullYear() === year;
+
+        });
+
+      if(currentMonthEvents.length > 0){
+
+        info.innerHTML = currentMonthEvents.map(event => `
+
+          <div class="calendar-event">
+
+            <strong>
+              ${event.title}
+            </strong>
+
+            <br>
+
+            ${event.text}
+
+            <br><br>
+
+            ${event.status}
+
+          </div>
+
+        `).join("");
+
+      } else {
+
+        info.innerHTML = `
+
+          Momentálně nejsou vypsané další termíny.
+
+          <br><br>
+
+          Pokud máš zájem o individuální workshop,
+          napiš mi na e-mail
+          <strong>ahoj@fgcoffee.cz</strong>
+
+        `;
+
+      }
+
+    }
+
+    function changeMonth(direction){
+
+      currentDate.setMonth(
+        currentDate.getMonth() + direction
+      );
+
+      renderCalendar();
+
+    }
+
+    renderCalendar();
+
+  </script>
 
 </body>
 </html>
