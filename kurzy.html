@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>FG Coffee — Kurzy</title>
 
@@ -11,7 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -57,7 +61,7 @@
     }
 
     .container{
-      max-width:1100px;
+      max-width:1150px;
       margin:auto;
       padding:0 24px 120px;
     }
@@ -74,10 +78,28 @@
       color:#777;
     }
 
+    .button{
+      display:inline-block;
+      padding:14px 28px;
+      border-radius:999px;
+      background:#111;
+      color:white;
+      transition:0.25s ease;
+      border:none;
+      cursor:pointer;
+      font-family:'Inter',sans-serif;
+      font-size:15px;
+    }
+
+    .button:hover{
+      transform:translateY(-2px);
+      opacity:0.92;
+    }
+
     .course-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
     }
 
     .course-card{
@@ -89,82 +111,74 @@
     }
 
     .course-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 35px rgba(0,0,0,0.08);
+      transform:translateY(-5px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.08);
     }
 
     .course-card img{
       width:100%;
-      height:340px;
+      height:280px;
       object-fit:cover;
     }
 
     .course-content{
-      padding:34px;
+      padding:30px;
     }
 
     .course-content h4{
-      font-size:30px;
+      font-size:28px;
+      line-height:1.2;
       margin-bottom:14px;
     }
 
     .course-content p{
       color:#666;
+      font-size:16px;
       margin-bottom:24px;
-      font-size:17px;
     }
 
     .course-meta{
       display:flex;
-      gap:12px;
       flex-wrap:wrap;
-      margin-bottom:26px;
+      gap:10px;
+      margin-bottom:24px;
     }
 
     .tag{
-      background:#f3f3f3;
-      padding:10px 16px;
+      background:#f5f3ef;
+      padding:10px 14px;
       border-radius:999px;
-      font-size:14px;
+      font-size:13px;
     }
 
-    .button{
-      display:inline-block;
-      padding:14px 28px;
-      border-radius:999px;
-      background:#111;
-      color:white;
-      transition:0.25s ease;
-    }
-
-    .button:hover{
-      transform:translateY(-2px);
-      opacity:0.92;
+    .price{
+      font-size:32px;
+      font-weight:700;
+      margin-bottom:22px;
     }
 
     .calendar-modern{
       background:white;
-      border-radius:30px;
-      padding:30px;
+      border-radius:32px;
+      padding:34px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
-      max-width:720px;
+      max-width:760px;
     }
 
     .calendar-top{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      margin-bottom:24px;
+      margin-bottom:28px;
     }
 
     .calendar-current h4{
       font-size:24px;
-      margin-bottom:2px;
     }
 
     .calendar-current span{
-      color:#777;
       font-size:12px;
+      color:#777;
     }
 
     .calendar-nav{
@@ -174,8 +188,8 @@
       border-radius:999px;
       background:#f5f3ef;
       cursor:pointer;
-      font-size:16px;
       transition:0.2s ease;
+      font-size:16px;
     }
 
     .calendar-nav:hover{
@@ -197,7 +211,7 @@
       text-align:center;
     }
 
-    .calendar-grid-modern{
+    .calendar-grid{
       display:grid;
       grid-template-columns:repeat(7,1fr);
       gap:8px;
@@ -210,9 +224,8 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:14px;
       position:relative;
-      transition:0.2s ease;
+      font-size:14px;
     }
 
     .calendar-day.empty{
@@ -223,11 +236,11 @@
       background:#111;
       color:white;
       cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
     }
 
-    .calendar-day.active:hover{
-      transform:translateY(-2px);
+    .calendar-day.full{
+      background:#bdbdbd;
+      color:white;
     }
 
     .calendar-tooltip{
@@ -235,35 +248,33 @@
       bottom:115%;
       left:50%;
       transform:translateX(-50%);
+      width:220px;
       background:#111;
       color:white;
-      padding:12px 14px;
-      border-radius:14px;
-      width:190px;
-      font-size:12px;
-      line-height:1.5;
+      padding:14px;
+      border-radius:18px;
       opacity:0;
       pointer-events:none;
       transition:0.2s ease;
+      font-size:12px;
+      line-height:1.6;
       z-index:10;
-      box-shadow:0 10px 25px rgba(0,0,0,0.15);
     }
 
     .calendar-tooltip.show{
       opacity:1;
     }
 
-    .calendar-empty{
+    .calendar-info{
       margin-top:24px;
-      padding-top:20px;
+      padding-top:22px;
       border-top:1px solid #ececec;
       color:#666;
       font-size:14px;
-      line-height:1.7;
     }
 
     .workshop-list{
-      margin-top:28px;
+      margin-top:26px;
       display:flex;
       flex-direction:column;
       gap:14px;
@@ -271,11 +282,11 @@
 
     .workshop-item{
       background:#f5f3ef;
-      border-radius:18px;
+      border-radius:20px;
       padding:18px 20px;
       display:flex;
-      justify-content:space-between;
       gap:20px;
+      justify-content:space-between;
       align-items:flex-start;
     }
 
@@ -285,24 +296,123 @@
       min-width:90px;
     }
 
+    .workshop-content{
+      flex:1;
+      font-size:14px;
+      color:#666;
+    }
+
     .workshop-content strong{
       display:block;
       margin-bottom:4px;
-    }
-
-    .workshop-content{
-      font-size:14px;
-      color:#666;
-      flex:1;
+      color:#111;
     }
 
     .workshop-status{
-      font-size:12px;
+      background:white;
       padding:8px 12px;
       border-radius:999px;
-      background:white;
-      color:#111;
+      font-size:12px;
       white-space:nowrap;
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+      backdrop-filter:blur(8px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      opacity:0;
+      pointer-events:none;
+      transition:0.25s ease;
+      z-index:999;
+    }
+
+    .modal.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .modal-box{
+      background:white;
+      width:100%;
+      max-width:620px;
+      border-radius:34px;
+      padding:36px;
+      position:relative;
+    }
+
+    .modal-close{
+      position:absolute;
+      top:20px;
+      right:20px;
+      width:42px;
+      height:42px;
+      border:none;
+      border-radius:999px;
+      background:#f5f3ef;
+      cursor:pointer;
+      font-size:18px;
+    }
+
+    .modal-box h4{
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    .modal-box p{
+      color:#666;
+      margin-bottom:28px;
+    }
+
+    .form-group{
+      margin-bottom:18px;
+    }
+
+    .form-group input,
+    .form-group textarea{
+      width:100%;
+      padding:18px 20px;
+      border:none;
+      border-radius:18px;
+      background:#f5f3ef;
+      font-family:'Inter',sans-serif;
+      font-size:15px;
+      outline:none;
+    }
+
+    .form-group textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .gdpr{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      margin:22px 0 28px;
+      font-size:14px;
+      color:#666;
+    }
+
+    .gdpr input{
+      margin-top:4px;
+    }
+
+    .gdpr a{
+      text-decoration:underline;
+    }
+
+    .success{
+      display:none;
+      margin-top:20px;
+      background:#f5f3ef;
+      padding:18px;
+      border-radius:18px;
+      font-size:14px;
     }
 
     footer{
@@ -312,6 +422,14 @@
       font-size:14px;
     }
 
+    @media (max-width:900px){
+
+      .course-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
     @media (max-width:768px){
 
       .hero{
@@ -319,7 +437,7 @@
       }
 
       .hero h1{
-        font-size:46px;
+        font-size:48px;
         letter-spacing:4px;
       }
 
@@ -327,16 +445,12 @@
         font-size:18px;
       }
 
-      .course-grid{
-        grid-template-columns:1fr;
-      }
-
       .course-card img{
         height:240px;
       }
 
       .course-content{
-        padding:26px;
+        padding:24px;
       }
 
       .course-content h4{
@@ -345,15 +459,6 @@
 
       .calendar-modern{
         padding:22px;
-        border-radius:24px;
-      }
-
-      .calendar-current h4{
-        font-size:20px;
-      }
-
-      .calendar-grid-modern{
-        gap:6px;
       }
 
       .calendar-day{
@@ -361,21 +466,25 @@
         font-size:13px;
       }
 
-      .calendar-tooltip{
-        width:160px;
-        font-size:11px;
-      }
-
       .workshop-item{
         flex-direction:column;
         gap:10px;
       }
 
+      .modal-box{
+        padding:26px;
+        border-radius:28px;
+      }
+
+      .modal-box h4{
+        font-size:28px;
+      }
+
     }
 
   </style>
-</head>
 
+</head>
 <body>
 
   <section class="hero">
@@ -412,12 +521,16 @@
             <h4>Základní baristický kurz</h4>
 
             <p>
-              Dozvíš se základní informace ke kávě a její přípravě. Naučíš se správně připravit espresso, pracovat s mlékem a osvojíš si workflow za barem.
+              Naučíš se správně připravit espresso, pracovat s mlékem a osvojíš si workflow za barem.
             </p>
 
             <div class="course-meta">
               <div class="tag">4 hodiny</div>
               <div class="tag">3–4 osoby</div>
+            </div>
+
+            <div class="price">
+              2 600 Kč
             </div>
 
           </div>
@@ -439,6 +552,35 @@
             <div class="course-meta">
               <div class="tag">4 hodiny</div>
               <div class="tag">2–3 osoby</div>
+            </div>
+
+            <div class="price">
+              2 300 Kč
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="course-card">
+
+          <img src="cupping1.jpg">
+
+          <div class="course-content">
+
+            <h4>Skupinový cupping</h4>
+
+            <p>
+              Řízená degustace výběrových káv a objevování chutí napříč zpracováním i původem.
+            </p>
+
+            <div class="course-meta">
+              <div class="tag">2 hodiny</div>
+              <div class="tag">až 11 osob</div>
+            </div>
+
+            <div class="price">
+              300 Kč
             </div>
 
           </div>
@@ -466,7 +608,7 @@
             <h4 id="calendarMonth"></h4>
 
             <span>
-              Podrobný přehled
+              Podrobný přehled workshopů
             </span>
 
           </div>
@@ -489,14 +631,11 @@
 
         </div>
 
-        <div class="calendar-grid-modern" id="calendarGrid">
-        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
 
-        <div class="calendar-empty" id="calendarInfo">
-        </div>
+        <div class="calendar-info" id="calendarInfo"></div>
 
-        <div class="workshop-list" id="workshopList">
-        </div>
+        <div class="workshop-list" id="workshopList"></div>
 
       </div>
 
@@ -507,6 +646,68 @@
   <footer>
     Filip Grygar © 2026
   </footer>
+
+  <div class="modal" id="bookingModal">
+
+    <div class="modal-box">
+
+      <button class="modal-close" onclick="closeModal()">
+        ×
+      </button>
+
+      <h4>Rezervace workshopu</h4>
+
+      <p id="modalWorkshop">
+      </p>
+
+      <form id="bookingForm">
+
+        <div class="form-group">
+          <input type="text" placeholder="Jméno a příjmení" required>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" placeholder="Telefon" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="E-mail" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" placeholder="Fakturační adresa" required>
+        </div>
+
+        <div class="form-group">
+          <textarea placeholder="Poznámka"></textarea>
+        </div>
+
+        <div class="gdpr">
+
+          <input type="checkbox" required>
+
+          <div>
+            Souhlasím se zpracováním osobních údajů dle
+            <a href="gdpr.html" target="_blank">
+              GDPR podmínek
+            </a>
+          </div>
+
+        </div>
+
+        <button class="button" type="submit">
+          Odeslat rezervaci
+        </button>
+
+        <div class="success" id="successMessage">
+          Rezervace byla odeslána ☕
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
 
   <script type="module">
 
@@ -528,13 +729,7 @@
       measurementId: "G-VVSHVT1R3X"
     };
 
-    const app =
-      initializeApp(firebaseConfig);
-
-    const db =
-      getFirestore(app);
-
-    window.db = db;
+    initializeApp(firebaseConfig);
 
   </script>
 
@@ -543,53 +738,30 @@
     const workshops = [
 
       {
-        id: "basic-barista-10-5",
-        date: "2026-05-10",
-        title: "Základní baristický kurz",
-        text: "Naučíš se správně připravit espresso, pracovat s mlékem a osvojíš si workflow za barem.",
-        capacity: 4,
-        reserved: 4,
-        private: false
-      },
-
-      {
-        id: "latte-art-14-6",
         date: "2026-06-14",
         title: "Základní latte art",
         text: "Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán.",
         capacity: 3,
         reserved: 1,
-        private: false
+        price: "2 300 Kč"
       },
 
       {
-        id: "latte-cafe-26-5",
-        date: "2026-05-26",
-        title: "Základní latte art pro kavárnu",
-        text: "Workshop zaměřený na mléčné nápoje a pouring.",
-        capacity: 5,
-        reserved: 5,
-        private: false
-      },
-
-      {
-        id: "private-bread",
-        date: "2026-05-21",
-        title: "Pokročilý latte art",
-        text: "Soukromý kurz pro kavárnu Bread Society.",
-        capacity: 1,
-        reserved: 1,
-        private: true
-      },
-
-      {
-        id: "cupping-nizbor",
         date: "2026-06-28",
-        title: "Soukromý cupping",
-        text: "Cupping pro kavárnu Zámek Nižbor Café.",
-        capacity: 1,
-        reserved: 1,
-        private: true
+        title: "Skupinový cupping",
+        text: "Řízená degustace výběrových káv.",
+        capacity: 11,
+        reserved: 6,
+        price: "300 Kč"
+      },
+
+      {
+        date: "2026-07-12",
+        title: "Základní baristický kurz",
+        text: "Espresso, mléko a workflow.",
+        capacity: 4,
+        reserved: 4,
+        price: "2 600 Kč"
       }
 
     ];
@@ -601,11 +773,7 @@
 
     let currentDate = new Date();
 
-    function getWorkshopStatus(workshop){
-
-      if(workshop.private){
-        return "Soukromý kurz";
-      }
+    function getStatus(workshop){
 
       if(workshop.reserved >= workshop.capacity){
         return `Obsazeno ${workshop.capacity}/${workshop.capacity}`;
@@ -666,13 +834,15 @@
         dayElement.className =
           "calendar-day";
 
-        if(workshop){
-          dayElement.classList.add("active");
-        }
-
         dayElement.innerHTML = `${day}`;
 
         if(workshop){
+
+          if(workshop.reserved >= workshop.capacity){
+            dayElement.classList.add("full");
+          } else {
+            dayElement.classList.add("active");
+          }
 
           dayElement.innerHTML += `
 
@@ -688,7 +858,7 @@
 
               <br><br>
 
-              ${getWorkshopStatus(workshop)}
+              ${getStatus(workshop)}
 
             </div>
 
@@ -698,14 +868,18 @@
 
             document
               .querySelectorAll(".calendar-tooltip")
-              .forEach(t =>
-                t.classList.remove("show")
-              );
+              .forEach(t => t.classList.remove("show"));
 
             const tooltip =
               dayElement.querySelector(".calendar-tooltip");
 
             tooltip.classList.add("show");
+
+            if(workshop.reserved < workshop.capacity){
+
+              openModal(workshop);
+
+            }
 
           });
 
@@ -714,9 +888,6 @@
         grid.appendChild(dayElement);
 
       }
-
-      const info =
-        document.getElementById("calendarInfo");
 
       const workshopList =
         document.getElementById("workshopList");
@@ -733,9 +904,8 @@
 
       if(currentMonthEvents.length > 0){
 
-        info.innerHTML = `
-          Klikni na označené datum pro detail kurzu ☕
-        `;
+        document.getElementById("calendarInfo").innerHTML =
+          `Klikni na označené datum pro rezervaci ☕`;
 
         workshopList.innerHTML =
           currentMonthEvents.map(event => {
@@ -747,7 +917,9 @@
               <div class="workshop-item">
 
                 <div class="workshop-date">
+
                   ${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}
+
                 </div>
 
                 <div class="workshop-content">
@@ -762,7 +934,7 @@
 
                 <div class="workshop-status">
 
-                  ${getWorkshopStatus(event)}
+                  ${getStatus(event)}
 
                 </div>
 
@@ -774,13 +946,8 @@
 
       } else {
 
-        info.innerHTML = `
-          Momentálně nejsou vypsané další termíny.
-          <br><br>
-          Pokud máš zájem o individuální kurz,
-          napiš mi na e-mail
-          <strong>ahoj@fgcoffee.cz</strong>
-        `;
+        document.getElementById("calendarInfo").innerHTML =
+          `Momentálně nejsou vypsané další termíny.`;
 
         workshopList.innerHTML = "";
 
@@ -798,15 +965,59 @@
 
     }
 
+    function openModal(workshop){
+
+      document
+        .getElementById("bookingModal")
+        .classList.add("show");
+
+      document
+        .getElementById("modalWorkshop")
+        .innerHTML = `
+
+          <strong>
+            ${workshop.title}
+          </strong>
+
+          <br>
+
+          ${new Date(workshop.date).toLocaleDateString("cs-CZ")}
+
+          <br><br>
+
+          ${workshop.price}
+
+        `;
+
+    }
+
+    function closeModal(){
+
+      document
+        .getElementById("bookingModal")
+        .classList.remove("show");
+
+    }
+
+    document
+      .getElementById("bookingForm")
+      .addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+        document
+          .getElementById("successMessage")
+          .style.display = "block";
+
+      });
+
     document.addEventListener("click", (e) => {
 
-      if(!e.target.closest(".calendar-day.active")){
+      if(!e.target.closest(".calendar-day")){
 
         document
           .querySelectorAll(".calendar-tooltip")
-          .forEach(t =>
-            t.classList.remove("show")
-          );
+          .forEach(t => t.classList.remove("show"));
 
       }
 
