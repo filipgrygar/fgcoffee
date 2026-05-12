@@ -472,7 +472,7 @@
 
     <section class="section">
 
-      <h3>Kalendář workshopů</h3>
+      <h3>Kalendář kurzů</h3>
 
       <div class="calendar-modern">
 
@@ -487,7 +487,7 @@
             <h4 id="calendarMonth"></h4>
 
             <span>
-              FG Coffee Workshops
+              Podrobný přehled 
             </span>
 
           </div>
@@ -526,7 +526,7 @@
   </div>
 
   <footer>
-    FG Coffee © 2026
+    Filip Grygar © 2026
   </footer>
 
   <script>
@@ -535,22 +535,28 @@
       {
         date: "2026-05-10",
         title: "Základní baristický kurz",
-        text: "Espresso, práce s mlékem a workflow za barem.",
+        text: "Naučíš se správně připravit espresso, pracovat s mlékem a osvojíš si workflow za barem.",
         status: "Již proběhlo ☕"
       },
 
       {
         date: "2026-06-14",
-        title: "Latte art basics",
-        text: "Napěnění mléka a pouring technika.",
-        status: "Volná místa"
+        title: "Základní latte art ",
+        text: "Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán.",
+        status: "Volná místa 2/3"
+      },
+       {
+        date: "2026-04-26",
+        title: "Základní latte art pro kavárnu ",
+        text: "Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán.",
+        status: "Obsazeno 5/5"
       },
 
       {
         date: "2026-06-28",
-        title: "Filtrovaná káva",
-        text: "V60, recepty a práce s extrakcí.",
-        status: "Poslední místa"
+        title: "Soukromý cupping",
+        text: "Cupping pro kavárnu",
+        status: "Soukromý cupping"
       }
     ];
 
@@ -684,7 +690,7 @@
       if(currentMonthEvents.length > 0){
 
         info.innerHTML = `
-          Klikni na označené datum pro detail workshopu ☕
+          Klikni na označený datum pro detail kurzu ☕
         `;
 
         workshopList.innerHTML =
@@ -729,7 +735,7 @@
         info.innerHTML = `
           Momentálně nejsou vypsané další termíny.
           <br><br>
-          Pokud máš zájem o individuální workshop,
+          Pokud máš zájem o individuální kurz,
           napiš mi na e-mail
           <strong>ahoj@fgcoffee.cz</strong>
         `;
