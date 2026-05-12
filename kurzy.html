@@ -147,7 +147,7 @@
       border-radius:30px;
       padding:30px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
-      max-width:620px;
+      max-width:720px;
     }
 
     .calendar-top{
@@ -249,9 +249,7 @@
       box-shadow:0 10px 25px rgba(0,0,0,0.15);
     }
 
-    .calendar-day.active:hover .calendar-tooltip,
-    .calendar-day.active:active .calendar-tooltip,
-    .calendar-day.active:focus .calendar-tooltip{
+    .calendar-tooltip.show{
       opacity:1;
     }
 
@@ -262,6 +260,49 @@
       color:#666;
       font-size:14px;
       line-height:1.7;
+    }
+
+    .workshop-list{
+      margin-top:28px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .workshop-item{
+      background:#f5f3ef;
+      border-radius:18px;
+      padding:18px 20px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:flex-start;
+    }
+
+    .workshop-date{
+      font-size:13px;
+      color:#777;
+      min-width:90px;
+    }
+
+    .workshop-content strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .workshop-content{
+      font-size:14px;
+      color:#666;
+      flex:1;
+    }
+
+    .workshop-status{
+      font-size:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:white;
+      color:#111;
+      white-space:nowrap;
     }
 
     footer{
@@ -325,6 +366,11 @@
         font-size:11px;
       }
 
+      .workshop-item{
+        flex-direction:column;
+        gap:10px;
+      }
+
     }
 
   </style>
@@ -371,13 +417,8 @@
 
             <div class="course-meta">
               <div class="tag">4 hodiny</div>
-              <div class="tag">pro kávové nadšence a kavárny</div>
               <div class="tag">3–4 osoby</div>
             </div>
-
-            <a class="button" href="mailto:ahoj@fgcoffee.cz">
-              Rezervovat kurz
-            </a>
 
           </div>
 
@@ -397,13 +438,8 @@
 
             <div class="course-meta">
               <div class="tag">4 hodiny</div>
-              <div class="tag">pokročilejší nadšenci a kavárny</div>
               <div class="tag">2–3 osoby</div>
             </div>
-
-            <a class="button" href="mailto:ahoj@fgcoffee.cz">
-              Rezervovat kurz
-            </a>
 
           </div>
 
@@ -423,13 +459,8 @@
 
             <div class="course-meta">
               <div class="tag">2 hodiny</div>
-              <div class="tag">pro všechny nadšence</div>
               <div class="tag">až 11 osob</div>
             </div>
-
-            <a class="button" href="mailto:ahoj@fgcoffee.cz">
-              Rezervovat cupping
-            </a>
 
           </div>
 
@@ -441,7 +472,7 @@
 
     <section class="section">
 
-      <h3>Kalendář kurzů</h3>
+      <h3>Kalendář workshopů</h3>
 
       <div class="calendar-modern">
 
@@ -453,12 +484,10 @@
 
           <div class="calendar-current">
 
-            <h4 id="calendarMonth">
-              Květen 2026
-            </h4>
+            <h4 id="calendarMonth"></h4>
 
             <span>
-              FG Coffee 
+              FG Coffee Workshops
             </span>
 
           </div>
@@ -487,6 +516,9 @@
         <div class="calendar-empty" id="calendarInfo">
         </div>
 
+        <div class="workshop-list" id="workshopList">
+        </div>
+
       </div>
 
     </section>
@@ -503,29 +535,22 @@
       {
         date: "2026-05-10",
         title: "Základní baristický kurz",
-        text: "Kapacita: 4/4",
+        text: "Espresso, práce s mlékem a workflow za barem.",
         status: "Již proběhlo ☕"
       },
 
       {
         date: "2026-06-14",
-        title: "Základní latte art",
-        text: "Kapacita: 1/3",
-        status: "Volná místa"
-      },
-
-      {
-        date: "2026-07-10",
-        title: "Základní baristický kurz",
-        text: "Kapacita: 0/4",
+        title: "Latte art basics",
+        text: "Napěnění mléka a pouring technika.",
         status: "Volná místa"
       },
 
       {
         date: "2026-06-28",
         title: "Filtrovaná káva",
-        text: "Kapacita: 3ú4",
-        status: "Poslední místo"
+        text: "V60, recepty a práce s extrakcí.",
+        status: "Poslední místa"
       }
     ];
 
@@ -622,6 +647,19 @@
 
           `;
 
+          dayElement.addEventListener("click", () => {
+
+            document
+              .querySelectorAll(".calendar-tooltip")
+              .forEach(t => t.classList.remove("show"));
+
+            const tooltip =
+              dayElement.querySelector(".calendar-tooltip");
+
+            tooltip.classList.add("show");
+
+          });
+
         }
 
         grid.appendChild(dayElement);
@@ -629,6 +667,9 @@
       }
 
       const info = document.getElementById("calendarInfo");
+
+      const workshopList =
+        document.getElementById("workshopList");
 
       const currentMonthEvents =
         workshops.filter(w => {
@@ -643,20 +684,57 @@
       if(currentMonthEvents.length > 0){
 
         info.innerHTML = `
-          MÁME VYPSANÉ TERMÍNY KURZŮ.
-          <br><br>
-          Klikni nebo najeď na označený datum pro detail kurzu ☕
+          Klikni na označené datum pro detail workshopu ☕
         `;
+
+        workshopList.innerHTML =
+          currentMonthEvents.map(event => {
+
+            const d = new Date(event.date);
+
+            return `
+
+              <div class="workshop-item">
+
+                <div class="workshop-date">
+
+                  ${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}
+
+                </div>
+
+                <div class="workshop-content">
+
+                  <strong>
+                    ${event.title}
+                  </strong>
+
+                  ${event.text}
+
+                </div>
+
+                <div class="workshop-status">
+
+                  ${event.status}
+
+                </div>
+
+              </div>
+
+            `;
+
+          }).join("");
 
       } else {
 
         info.innerHTML = `
           Momentálně nejsou vypsané další termíny.
           <br><br>
-          Pokud máš zájem o kurz,
+          Pokud máš zájem o individuální workshop,
           napiš mi na e-mail
           <strong>ahoj@fgcoffee.cz</strong>
         `;
+
+        workshopList.innerHTML = "";
 
       }
 
@@ -671,6 +749,18 @@
       renderCalendar();
 
     }
+
+    document.addEventListener("click", (e) => {
+
+      if(!e.target.closest(".calendar-day.active")){
+
+        document
+          .querySelectorAll(".calendar-tooltip")
+          .forEach(t => t.classList.remove("show"));
+
+      }
+
+    });
 
     renderCalendar();
 
