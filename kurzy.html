@@ -433,33 +433,12 @@
             <h4>Základní latte art</h4>
 
             <p>
-              Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán. Provedu tě správnou technikou šlehání a dozvíš se vše potřebné k příslušenství.
+              Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán.
             </p>
 
             <div class="course-meta">
               <div class="tag">4 hodiny</div>
               <div class="tag">2–3 osoby</div>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="course-card">
-
-          <img src="cupping1.jpg">
-
-          <div class="course-content">
-
-            <h4>Skupinový cupping</h4>
-
-            <p>
-              Zajímá tě rozmanitost chutí v kávě? Degustace určená pro všechny kávové nadšence ti ukáže rozdíly mezi jednotlivými kávami a jejich chutěmi.
-            </p>
-
-            <div class="course-meta">
-              <div class="tag">2 hodiny</div>
-              <div class="tag">až 11 osob</div>
             </div>
 
           </div>
@@ -487,7 +466,7 @@
             <h4 id="calendarMonth"></h4>
 
             <span>
-              Podrobný přehled 
+              Podrobný přehled
             </span>
 
           </div>
@@ -529,60 +508,111 @@
     Filip Grygar © 2026
   </footer>
 
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+
+    import {
+      getFirestore
+    }
+    from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBF9_O1B-Sv9r3jSr6kuQBtpuNA9HitB8k",
+      authDomain: "fgcoffee-9be5e.firebaseapp.com",
+      projectId: "fgcoffee-9be5e",
+      storageBucket: "fgcoffee-9be5e.firebasestorage.app",
+      messagingSenderId: "919590934394",
+      appId: "1:919590934394:web:55742a8ea86a7ff05a68c3",
+      measurementId: "G-VVSHVT1R3X"
+    };
+
+    const app =
+      initializeApp(firebaseConfig);
+
+    const db =
+      getFirestore(app);
+
+    window.db = db;
+
+  </script>
+
   <script>
 
     const workshops = [
+
       {
+        id: "basic-barista-10-5",
         date: "2026-05-10",
         title: "Základní baristický kurz",
         text: "Naučíš se správně připravit espresso, pracovat s mlékem a osvojíš si workflow za barem.",
-        status: "Již proběhlo ☕"
+        capacity: 4,
+        reserved: 4,
+        private: false
       },
 
       {
+        id: "latte-art-14-6",
         date: "2026-06-14",
-        title: "Základní latte art ",
+        title: "Základní latte art",
         text: "Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán.",
-        status: "Volná místa 2/3"
+        capacity: 3,
+        reserved: 1,
+        private: false
       },
-       {
-        date: "2026-05-26",
-        title: "Základní latte art pro kavárnu ",
-        text: "Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán.",
-        status: "Obsazeno 5/5"
-      },
+
       {
+        id: "latte-cafe-26-5",
+        date: "2026-05-26",
+        title: "Základní latte art pro kavárnu",
+        text: "Workshop zaměřený na mléčné nápoje a pouring.",
+        capacity: 5,
+        reserved: 5,
+        private: false
+      },
+
+      {
+        id: "private-bread",
         date: "2026-05-21",
         title: "Pokročilý latte art",
-        text: "Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán. Soukromý kurz pro kavárnu Bread Society",
-        status: "Soukromý kurz"
+        text: "Soukromý kurz pro kavárnu Bread Society.",
+        capacity: 1,
+        reserved: 1,
+        private: true
       },
 
-
       {
+        id: "cupping-nizbor",
         date: "2026-06-28",
         title: "Soukromý cupping",
-        text: "Cupping pro kavárnu Zámek Nižbor Café",
-        status: "Soukromý cupping"
+        text: "Cupping pro kavárnu Zámek Nižbor Café.",
+        capacity: 1,
+        reserved: 1,
+        private: true
       }
+
     ];
 
     const monthNames = [
-      "Leden",
-      "Únor",
-      "Březen",
-      "Duben",
-      "Květen",
-      "Červen",
-      "Červenec",
-      "Srpen",
-      "Září",
-      "Říjen",
-      "Listopad",
-      "Prosinec"
+      "Leden","Únor","Březen","Duben","Květen","Červen",
+      "Červenec","Srpen","Září","Říjen","Listopad","Prosinec"
     ];
 
     let currentDate = new Date();
+
+    function getWorkshopStatus(workshop){
+
+      if(workshop.private){
+        return "Soukromý kurz";
+      }
+
+      if(workshop.reserved >= workshop.capacity){
+        return `Obsazeno ${workshop.capacity}/${workshop.capacity}`;
+      }
+
+      return `Volná místa ${workshop.capacity - workshop.reserved}/${workshop.capacity}`;
+    }
 
     function renderCalendar(){
 
@@ -592,13 +622,16 @@
       document.getElementById("calendarMonth").innerText =
         `${monthNames[month]} ${year}`;
 
-      const grid = document.getElementById("calendarGrid");
+      const grid =
+        document.getElementById("calendarGrid");
 
       grid.innerHTML = "";
 
-      const firstDay = new Date(year, month, 1);
+      const firstDay =
+        new Date(year, month, 1);
 
-      let startDay = firstDay.getDay() - 1;
+      let startDay =
+        firstDay.getDay() - 1;
 
       if(startDay < 0){
         startDay = 6;
@@ -609,9 +642,11 @@
 
       for(let i = 0; i < startDay; i++){
 
-        const empty = document.createElement("div");
+        const empty =
+          document.createElement("div");
 
-        empty.className = "calendar-day empty";
+        empty.className =
+          "calendar-day empty";
 
         grid.appendChild(empty);
 
@@ -628,15 +663,14 @@
         const dayElement =
           document.createElement("div");
 
-        dayElement.className = "calendar-day";
+        dayElement.className =
+          "calendar-day";
 
         if(workshop){
           dayElement.classList.add("active");
         }
 
-        dayElement.innerHTML = `
-          ${day}
-        `;
+        dayElement.innerHTML = `${day}`;
 
         if(workshop){
 
@@ -654,7 +688,7 @@
 
               <br><br>
 
-              ${workshop.status}
+              ${getWorkshopStatus(workshop)}
 
             </div>
 
@@ -664,7 +698,9 @@
 
             document
               .querySelectorAll(".calendar-tooltip")
-              .forEach(t => t.classList.remove("show"));
+              .forEach(t =>
+                t.classList.remove("show")
+              );
 
             const tooltip =
               dayElement.querySelector(".calendar-tooltip");
@@ -679,7 +715,8 @@
 
       }
 
-      const info = document.getElementById("calendarInfo");
+      const info =
+        document.getElementById("calendarInfo");
 
       const workshopList =
         document.getElementById("workshopList");
@@ -697,7 +734,7 @@
       if(currentMonthEvents.length > 0){
 
         info.innerHTML = `
-          Klikni na označený datum pro detail kurzu ☕
+          Klikni na označené datum pro detail kurzu ☕
         `;
 
         workshopList.innerHTML =
@@ -710,9 +747,7 @@
               <div class="workshop-item">
 
                 <div class="workshop-date">
-
                   ${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}
-
                 </div>
 
                 <div class="workshop-content">
@@ -727,7 +762,7 @@
 
                 <div class="workshop-status">
 
-                  ${event.status}
+                  ${getWorkshopStatus(event)}
 
                 </div>
 
@@ -769,7 +804,9 @@
 
         document
           .querySelectorAll(".calendar-tooltip")
-          .forEach(t => t.classList.remove("show"));
+          .forEach(t =>
+            t.classList.remove("show")
+          );
 
       }
 
