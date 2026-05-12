@@ -114,11 +114,9 @@
       transition:0.25s ease;
       font-size:15px;
       font-weight:500;
-    }
-
-    .button-dark{
-      background:#111;
-      color:white;
+      border:none;
+      cursor:pointer;
+      font-family:'Inter',sans-serif;
     }
 
     .button-light{
@@ -176,11 +174,9 @@
     .service-card{
       background:white;
       border-radius:36px;
-      padding:40px;
+      padding:42px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
       transition:0.25s ease;
-      position:relative;
-      overflow:hidden;
     }
 
     .service-card:hover{
@@ -188,27 +184,15 @@
       box-shadow:0 18px 40px rgba(0,0,0,0.08);
     }
 
-    .service-icon{
-      width:54px;
-      height:54px;
-      border-radius:18px;
-      background:#f5f3ef;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:24px;
-      font-size:22px;
-    }
-
     .service-card h4{
-      font-size:32px;
+      font-size:34px;
+      margin-bottom:18px;
       line-height:1.1;
-      margin-bottom:16px;
     }
 
     .service-card p{
       color:#666;
-      font-size:17px;
+      font-size:18px;
       line-height:1.8;
     }
 
@@ -334,6 +318,14 @@
       opacity:0.7;
     }
 
+    .form-card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:32px;
+      padding:30px;
+      backdrop-filter:blur(14px);
+    }
+
     .form-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -342,11 +334,18 @@
     }
 
     .form-group{
-      margin-bottom:14px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
     }
 
     .form-group.full{
       grid-column:1/-1;
+    }
+
+    .form-group label{
+      font-size:13px;
+      color:rgba(255,255,255,0.72);
     }
 
     input,
@@ -354,8 +353,8 @@
     textarea{
       width:100%;
       border:none;
-      background:rgba(255,255,255,0.08);
-      color:white;
+      background:white;
+      color:#111;
       border-radius:18px;
       padding:18px 20px;
       font-family:'Inter',sans-serif;
@@ -363,17 +362,8 @@
       outline:none;
     }
 
-    input::placeholder,
-    textarea::placeholder{
-      color:rgba(255,255,255,0.45);
-    }
-
-    select{
-      color:rgba(255,255,255,0.7);
-    }
-
     textarea{
-      min-height:160px;
+      min-height:170px;
       resize:vertical;
     }
 
@@ -387,8 +377,11 @@
     }
 
     .gdpr input{
-      width:auto;
-      margin-top:4px;
+      width:16px;
+      height:16px;
+      min-width:16px;
+      margin-top:3px;
+      accent-color:white;
     }
 
     .gdpr a{
@@ -453,7 +446,11 @@
       }
 
       .service-card h4{
-        font-size:26px;
+        font-size:28px;
+      }
+
+      .service-card p{
+        font-size:16px;
       }
 
       .experience-image img{
@@ -498,8 +495,18 @@
         word-break:break-word;
       }
 
+      .form-card{
+        padding:20px;
+        border-radius:24px;
+      }
+
       .form-grid{
         grid-template-columns:1fr;
+      }
+
+      .gdpr{
+        font-size:13px;
+        line-height:1.6;
       }
 
     }
@@ -584,60 +591,49 @@
 
         <div class="service-card">
 
-          <div class="service-icon">
-            ☕
-          </div>
-
           <h4>Espresso bar</h4>
 
           <p>
             Espresso, cappuccino i signature drinky
             z výběrové kávy připravované přímo na místě.
+            Pracujeme s výběrovou kávou z českých
+            i zahraničních pražíren.
           </p>
 
         </div>
 
         <div class="service-card">
-
-          <div class="service-icon">
-            V60
-          </div>
 
           <h4>Filtrovaná káva</h4>
 
           <p>
             Batch brew nebo hand brew pro hosty,
             kteří chtějí čistší a ovocnější chuťový profil.
+            Ideální doplněk ke klasickému espresso baru.
           </p>
 
         </div>
 
         <div class="service-card">
-
-          <div class="service-icon">
-            ✷
-          </div>
 
           <h4>Fermentované limonády</h4>
 
           <p>
             Řemeslné limonády Bacilli a další nealko drinky,
-            ideální hlavně během letních eventů a svateb.
+            které skvěle fungují hlavně během letních eventů
+            a svateb.
           </p>
 
         </div>
 
         <div class="service-card">
 
-          <div class="service-icon">
-            ⌂
-          </div>
-
           <h4>Kompletní servis</h4>
 
           <p>
             Přivezeme techniku, připravíme celý setup
-            a postaráme se o kompletní průběh coffee baru.
+            a postaráme se o kompletní kávový servis,
+            aby sis mohl akci užít bez starostí.
           </p>
 
         </div>
@@ -824,49 +820,63 @@
 
         </div>
 
-        <div>
+        <div class="form-card">
 
           <form
             action="https://formspree.io/f/xdabjolz"
             method="POST"
+            id="contactForm"
           >
 
             <div class="form-grid">
 
               <div class="form-group">
 
+                <label>
+                  Jméno a příjmení
+                </label>
+
                 <input
                   type="text"
                   name="Jméno"
-                  placeholder="Jméno a příjmení"
                   required
                 >
 
               </div>
 
               <div class="form-group">
+
+                <label>
+                  E-mail
+                </label>
 
                 <input
                   type="email"
                   name="Email"
-                  placeholder="E-mail"
                   required
                 >
 
               </div>
 
               <div class="form-group">
+
+                <label>
+                  Telefon
+                </label>
 
                 <input
                   type="tel"
                   name="Telefon"
-                  placeholder="Telefon"
                   required
                 >
 
               </div>
 
               <div class="form-group">
+
+                <label>
+                  Datum akce
+                </label>
 
                 <input
                   type="date"
@@ -878,10 +888,13 @@
 
               <div class="form-group">
 
+                <label>
+                  Místo akce
+                </label>
+
                 <input
                   type="text"
                   name="Místo akce"
-                  placeholder="Místo akce"
                   required
                 >
 
@@ -889,10 +902,13 @@
 
               <div class="form-group">
 
+                <label>
+                  Počet hostů
+                </label>
+
                 <input
                   type="number"
                   name="Počet hostů"
-                  placeholder="Počet hostů"
                   required
                 >
 
@@ -900,13 +916,17 @@
 
               <div class="form-group full">
 
+                <label>
+                  Typ akce
+                </label>
+
                 <select
                   name="Typ akce"
                   required
                 >
 
                   <option value="">
-                    Typ akce
+                    Vyber typ akce
                   </option>
 
                   <option>
@@ -934,6 +954,10 @@
               </div>
 
               <div class="form-group full">
+
+                <label>
+                  Představ mi akci
+                </label>
 
                 <textarea
                   name="Představ mi akci"
@@ -974,6 +998,85 @@
   <footer>
     FG Coffee © 2026
   </footer>
+
+  <script>
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", async (e) => {
+
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      const response = await fetch(form.action, {
+
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+
+      });
+
+      if(response.ok){
+
+        form.reset();
+
+        form.innerHTML = `
+
+          <div style="
+            background:white;
+            color:#111;
+            padding:40px 34px;
+            border-radius:28px;
+            text-align:center;
+          ">
+
+            <div style="
+              font-size:12px;
+              letter-spacing:2px;
+              text-transform:uppercase;
+              color:#777;
+              margin-bottom:18px;
+            ">
+
+              FG Coffee
+
+            </div>
+
+            <h3 style="
+              font-size:36px;
+              margin-bottom:14px;
+              line-height:1.2;
+            ">
+
+              Odesláno ☕
+
+            </h3>
+
+            <p style="
+              color:#666;
+              font-size:16px;
+              line-height:1.8;
+              max-width:420px;
+              margin:auto;
+            ">
+
+              Děkuji za váš zájem.<br>
+              Brzy vás budu kontaktovat ohledně coffee baru.
+
+            </p>
+
+          </div>
+
+        `;
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
