@@ -43,21 +43,39 @@
     }
 
     .hero{
-      padding:140px 24px 100px;
+      padding:120px 24px 90px;
       text-align:center;
     }
 
     .hero h1{
-      font-size:72px;
+      font-size:68px;
       letter-spacing:6px;
       margin-bottom:18px;
     }
 
     .hero p{
-      font-size:22px;
+      font-size:21px;
       max-width:760px;
       margin:auto;
       color:#555;
+    }
+
+    .button{
+      display:inline-block;
+      padding:14px 28px;
+      border-radius:999px;
+      background:#111;
+      color:white;
+      border:none;
+      cursor:pointer;
+      transition:0.25s ease;
+      font-family:'Inter',sans-serif;
+      font-size:15px;
+    }
+
+    .button:hover{
+      transform:translateY(-2px);
+      opacity:0.92;
     }
 
     .container{
@@ -67,7 +85,7 @@
     }
 
     .section{
-      margin-bottom:120px;
+      margin-bottom:110px;
     }
 
     .section h3{
@@ -76,24 +94,6 @@
       letter-spacing:3px;
       margin-bottom:32px;
       color:#777;
-    }
-
-    .button{
-      display:inline-block;
-      padding:14px 28px;
-      border-radius:999px;
-      background:#111;
-      color:white;
-      transition:0.25s ease;
-      border:none;
-      cursor:pointer;
-      font-family:'Inter',sans-serif;
-      font-size:15px;
-    }
-
-    .button:hover{
-      transform:translateY(-2px);
-      opacity:0.92;
     }
 
     .course-grid{
@@ -111,13 +111,13 @@
     }
 
     .course-card:hover{
-      transform:translateY(-5px);
+      transform:translateY(-4px);
       box-shadow:0 18px 40px rgba(0,0,0,0.08);
     }
 
     .course-card img{
       width:100%;
-      height:280px;
+      height:260px;
       object-fit:cover;
     }
 
@@ -127,21 +127,21 @@
 
     .course-content h4{
       font-size:28px;
-      line-height:1.2;
       margin-bottom:14px;
+      line-height:1.2;
     }
 
     .course-content p{
       color:#666;
       font-size:16px;
-      margin-bottom:24px;
+      margin-bottom:22px;
     }
 
     .course-meta{
       display:flex;
-      flex-wrap:wrap;
       gap:10px;
-      margin-bottom:24px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
     }
 
     .tag{
@@ -152,15 +152,14 @@
     }
 
     .price{
-      font-size:32px;
+      font-size:30px;
       font-weight:700;
-      margin-bottom:22px;
     }
 
     .calendar-modern{
       background:white;
       border-radius:32px;
-      padding:34px;
+      padding:32px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
       max-width:760px;
     }
@@ -174,6 +173,7 @@
 
     .calendar-current h4{
       font-size:24px;
+      margin-bottom:2px;
     }
 
     .calendar-current span{
@@ -226,6 +226,7 @@
       justify-content:center;
       position:relative;
       font-size:14px;
+      transition:0.2s ease;
     }
 
     .calendar-day.empty{
@@ -239,8 +240,12 @@
     }
 
     .calendar-day.full{
-      background:#bdbdbd;
+      background:#bcbcbc;
       color:white;
+    }
+
+    .calendar-day:hover{
+      transform:translateY(-2px);
     }
 
     .calendar-tooltip{
@@ -267,14 +272,14 @@
 
     .calendar-info{
       margin-top:24px;
-      padding-top:22px;
+      padding-top:20px;
       border-top:1px solid #ececec;
       color:#666;
       font-size:14px;
     }
 
     .workshop-list{
-      margin-top:26px;
+      margin-top:24px;
       display:flex;
       flex-direction:column;
       gap:14px;
@@ -282,11 +287,11 @@
 
     .workshop-item{
       background:#f5f3ef;
-      border-radius:20px;
-      padding:18px 20px;
+      border-radius:18px;
+      padding:18px;
       display:flex;
-      gap:20px;
       justify-content:space-between;
+      gap:20px;
       align-items:flex-start;
     }
 
@@ -298,8 +303,8 @@
 
     .workshop-content{
       flex:1;
-      font-size:14px;
       color:#666;
+      font-size:14px;
     }
 
     .workshop-content strong{
@@ -329,6 +334,7 @@
       pointer-events:none;
       transition:0.25s ease;
       z-index:999;
+      overflow-y:auto;
     }
 
     .modal.show{
@@ -340,9 +346,11 @@
       background:white;
       width:100%;
       max-width:620px;
-      border-radius:34px;
-      padding:36px;
+      border-radius:32px;
+      padding:34px;
       position:relative;
+      max-height:90vh;
+      overflow-y:auto;
     }
 
     .modal-close{
@@ -406,13 +414,13 @@
       text-decoration:underline;
     }
 
-    .success{
-      display:none;
-      margin-top:20px;
-      background:#f5f3ef;
-      padding:18px;
-      border-radius:18px;
+    .location-box{
+      margin-top:28px;
+      padding-top:24px;
+      border-top:1px solid #ececec;
+      color:#666;
       font-size:14px;
+      line-height:1.8;
     }
 
     footer{
@@ -422,7 +430,7 @@
       font-size:14px;
     }
 
-    @media (max-width:900px){
+    @media (max-width:950px){
 
       .course-grid{
         grid-template-columns:1fr;
@@ -433,11 +441,11 @@
     @media (max-width:768px){
 
       .hero{
-        padding:100px 20px 80px;
+        padding:90px 20px 70px;
       }
 
       .hero h1{
-        font-size:48px;
+        font-size:46px;
         letter-spacing:4px;
       }
 
@@ -446,7 +454,7 @@
       }
 
       .course-card img{
-        height:240px;
+        height:230px;
       }
 
       .course-content{
@@ -461,9 +469,18 @@
         padding:22px;
       }
 
+      .calendar-grid{
+        gap:6px;
+      }
+
       .calendar-day{
-        border-radius:10px;
         font-size:13px;
+        border-radius:10px;
+      }
+
+      .calendar-tooltip{
+        width:170px;
+        font-size:11px;
       }
 
       .workshop-item{
@@ -472,8 +489,8 @@
       }
 
       .modal-box{
-        padding:26px;
-        border-radius:28px;
+        padding:24px;
+        border-radius:26px;
       }
 
       .modal-box h4{
@@ -485,6 +502,7 @@
   </style>
 
 </head>
+
 <body>
 
   <section class="hero">
@@ -608,7 +626,7 @@
             <h4 id="calendarMonth"></h4>
 
             <span>
-              Podrobný přehled workshopů
+              Klikni na termín pro rezervaci
             </span>
 
           </div>
@@ -644,7 +662,7 @@
   </div>
 
   <footer>
-    Filip Grygar © 2026
+    FG Coffee © 2026
   </footer>
 
   <div class="modal" id="bookingModal">
@@ -657,30 +675,72 @@
 
       <h4>Rezervace workshopu</h4>
 
-      <p id="modalWorkshop">
-      </p>
+      <p id="modalWorkshop"></p>
 
-      <form id="bookingForm">
+      <form
+        id="bookingForm"
+        action="https://formspree.io/f/xdabjolz"
+        method="POST"
+      >
 
         <div class="form-group">
-          <input type="text" placeholder="Jméno a příjmení" required>
+
+          <input
+            type="text"
+            name="Jméno"
+            placeholder="Jméno a příjmení"
+            required
+          >
+
         </div>
 
         <div class="form-group">
-          <input type="tel" placeholder="Telefon" required>
+
+          <input
+            type="tel"
+            name="Telefon"
+            placeholder="Telefon"
+            required
+          >
+
         </div>
 
         <div class="form-group">
-          <input type="email" placeholder="E-mail" required>
+
+          <input
+            type="email"
+            name="Email"
+            placeholder="E-mail"
+            required
+          >
+
         </div>
 
         <div class="form-group">
-          <input type="text" placeholder="Fakturační adresa" required>
+
+          <input
+            type="text"
+            name="Fakturační adresa"
+            placeholder="Fakturační adresa"
+            required
+          >
+
         </div>
 
         <div class="form-group">
-          <textarea placeholder="Poznámka"></textarea>
+
+          <textarea
+            name="Poznámka"
+            placeholder="Poznámka"
+          ></textarea>
+
         </div>
+
+        <input
+          type="hidden"
+          name="Kurz"
+          id="selectedWorkshop"
+        >
 
         <div class="gdpr">
 
@@ -699,39 +759,24 @@
           Odeslat rezervaci
         </button>
 
-        <div class="success" id="successMessage">
-          Rezervace byla odeslána ☕
-        </div>
-
       </form>
+
+      <div class="location-box">
+
+        <strong>
+          Místo konání kurzů
+        </strong>
+
+        <br><br>
+
+        Kurzy probíhají převážně v Berouně nebo po individuální domluvě.
+        Přesné informace k místu konání obdržíš po potvrzení rezervace.
+
+      </div>
 
     </div>
 
   </div>
-
-  <script type="module">
-
-    import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-
-    import {
-      getFirestore
-    }
-    from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBF9_O1B-Sv9r3jSr6kuQBtpuNA9HitB8k",
-      authDomain: "fgcoffee-9be5e.firebaseapp.com",
-      projectId: "fgcoffee-9be5e",
-      storageBucket: "fgcoffee-9be5e.firebasestorage.app",
-      messagingSenderId: "919590934394",
-      appId: "1:919590934394:web:55742a8ea86a7ff05a68c3",
-      measurementId: "G-VVSHVT1R3X"
-    };
-
-    initializeApp(firebaseConfig);
-
-  </script>
 
   <script>
 
@@ -780,6 +825,7 @@
       }
 
       return `Volná místa ${workshop.capacity - workshop.reserved}/${workshop.capacity}`;
+
     }
 
     function renderCalendar(){
@@ -834,14 +880,19 @@
         dayElement.className =
           "calendar-day";
 
-        dayElement.innerHTML = `${day}`;
+        dayElement.innerHTML =
+          `${day}`;
 
         if(workshop){
 
           if(workshop.reserved >= workshop.capacity){
+
             dayElement.classList.add("full");
+
           } else {
+
             dayElement.classList.add("active");
+
           }
 
           dayElement.innerHTML += `
@@ -868,7 +919,9 @@
 
             document
               .querySelectorAll(".calendar-tooltip")
-              .forEach(t => t.classList.remove("show"));
+              .forEach(t =>
+                t.classList.remove("show")
+              );
 
             const tooltip =
               dayElement.querySelector(".calendar-tooltip");
@@ -905,7 +958,7 @@
       if(currentMonthEvents.length > 0){
 
         document.getElementById("calendarInfo").innerHTML =
-          `Klikni na označené datum pro rezervaci ☕`;
+          `Aktuálně vypsané termíny workshopů ☕`;
 
         workshopList.innerHTML =
           currentMonthEvents.map(event => {
@@ -947,7 +1000,7 @@
       } else {
 
         document.getElementById("calendarInfo").innerHTML =
-          `Momentálně nejsou vypsané další termíny.`;
+          `Momentálně nejsou vypsané další termíny workshopů.`;
 
         workshopList.innerHTML = "";
 
@@ -989,6 +1042,11 @@
 
         `;
 
+      document
+        .getElementById("selectedWorkshop")
+        .value =
+        `${workshop.title} — ${new Date(workshop.date).toLocaleDateString("cs-CZ")}`;
+
     }
 
     function closeModal(){
@@ -999,17 +1057,40 @@
 
     }
 
-    document
-      .getElementById("bookingForm")
-      .addEventListener("submit", (e) => {
+    const form =
+      document.getElementById("bookingForm");
 
-        e.preventDefault();
+    form.addEventListener("submit", async (e) => {
 
-        document
-          .getElementById("successMessage")
-          .style.display = "block";
+      e.preventDefault();
 
-      });
+      const data =
+        new FormData(form);
+
+      const response =
+        await fetch(form.action, {
+
+          method: "POST",
+
+          body: data,
+
+          headers: {
+            'Accept': 'application/json'
+          }
+
+        });
+
+      if(response.ok){
+
+        closeModal();
+
+        alert("Rezervace byla odeslána ☕");
+
+        form.reset();
+
+      }
+
+    });
 
     document.addEventListener("click", (e) => {
 
@@ -1017,7 +1098,9 @@
 
         document
           .querySelectorAll(".calendar-tooltip")
-          .forEach(t => t.classList.remove("show"));
+          .forEach(t =>
+            t.classList.remove("show")
+          );
 
       }
 
