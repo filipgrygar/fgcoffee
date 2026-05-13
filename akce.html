@@ -114,6 +114,9 @@
       transition:0.25s ease;
       font-size:15px;
       font-weight:500;
+      border:none;
+      cursor:pointer;
+      font-family:'Inter',sans-serif;
     }
 
     .button-light{
@@ -174,7 +177,6 @@
       padding:40px;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
       transition:0.25s ease;
-      overflow:hidden;
     }
 
     .service-card:hover{
@@ -184,7 +186,6 @@
 
     .service-card h4{
       font-size:32px;
-      line-height:1.1;
       margin-bottom:16px;
     }
 
@@ -226,40 +227,6 @@
       margin-bottom:18px;
     }
 
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
-    }
-
-    .step{
-      background:white;
-      border-radius:30px;
-      padding:34px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.04);
-    }
-
-    .step-number{
-      font-size:11px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      color:#888;
-      margin-bottom:16px;
-    }
-
-    .step-title{
-      font-size:26px;
-      line-height:1.2;
-      margin-bottom:14px;
-      font-weight:600;
-    }
-
-    .step-text{
-      color:#666;
-      font-size:15px;
-      line-height:1.8;
-    }
-
     .gallery-grid{
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
@@ -270,11 +237,6 @@
       height:520px;
       object-fit:cover;
       border-radius:34px;
-      transition:0.3s ease;
-    }
-
-    .gallery-grid img:hover{
-      transform:scale(1.02);
     }
 
     .contact-box{
@@ -296,7 +258,6 @@
     .contact-box p{
       font-size:18px;
       color:rgba(255,255,255,0.72);
-      max-width:520px;
     }
 
     .contact-links{
@@ -309,21 +270,12 @@
     .contact-links a{
       font-size:28px;
       font-weight:600;
-      transition:0.2s ease;
-    }
-
-    .contact-links a:hover{
-      opacity:0.7;
     }
 
     .form-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:14px;
-      margin-bottom:14px;
-    }
-
-    .form-group{
       margin-bottom:14px;
     }
 
@@ -350,10 +302,6 @@
       color:rgba(255,255,255,0.45);
     }
 
-    select{
-      color:rgba(255,255,255,0.7);
-    }
-
     textarea{
       min-height:160px;
       resize:vertical;
@@ -361,20 +309,22 @@
 
     .gdpr{
       display:flex;
-      gap:12px;
+      gap:8px;
       align-items:flex-start;
       margin:24px 0 30px;
-      font-size:14px;
+      font-size:13px;
       color:rgba(255,255,255,0.72);
+      line-height:1.5;
     }
 
     .gdpr input{
-      width:16px;
-      height:16px;
-      min-width:16px;
+      width:15px;
+      height:15px;
+      min-width:15px;
       margin-top:3px;
       flex-shrink:0;
-      accent-color:white;
+      accent-color:#111;
+      cursor:pointer;
     }
 
     .gdpr a{
@@ -388,22 +338,6 @@
       font-size:14px;
     }
 
-    @media (max-width:1000px){
-
-      .steps{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .experience{
-        grid-template-columns:1fr;
-      }
-
-      .contact-box{
-        grid-template-columns:1fr;
-      }
-
-    }
-
     @media (max-width:768px){
 
       .hero{
@@ -411,57 +345,24 @@
         padding:40px 20px 70px;
       }
 
-      .hero-top{
-        margin-bottom:90px;
-      }
-
       .hero h1{
         font-size:54px;
-        letter-spacing:3px;
       }
 
       .hero p{
         font-size:19px;
-        line-height:1.7;
       }
 
-      .intro{
-        font-size:28px;
-      }
-
-      .services-grid{
+      .services-grid,
+      .gallery-grid,
+      .form-grid,
+      .experience,
+      .contact-box{
         grid-template-columns:1fr;
-      }
-
-      .service-card{
-        padding:30px;
-        border-radius:28px;
-      }
-
-      .service-card h4{
-        font-size:26px;
       }
 
       .experience-image img{
         height:380px;
-        border-radius:28px;
-      }
-
-      .experience-content{
-        padding:30px;
-        border-radius:28px;
-      }
-
-      .experience-content h3{
-        font-size:30px;
-      }
-
-      .steps{
-        grid-template-columns:1fr;
-      }
-
-      .gallery-grid{
-        grid-template-columns:1fr;
       }
 
       .gallery-grid img{
@@ -470,26 +371,16 @@
 
       .contact-box{
         padding:34px 24px;
-        border-radius:28px;
-        gap:40px;
-      }
-
-      .contact-box h3{
-        font-size:36px;
-      }
-
-      .contact-links a{
-        font-size:22px;
-        word-break:break-word;
-      }
-
-      .form-grid{
-        grid-template-columns:1fr;
       }
 
       input[type="date"]{
-        min-height:58px;
-        font-size:16px;
+        min-height:54px;
+        padding:14px 16px;
+        font-size:15px;
+      }
+
+      .gdpr{
+        font-size:12px;
       }
 
     }
@@ -500,471 +391,260 @@
 
 <body>
 
-  <section class="hero">
+<section class="hero">
 
-    <div class="hero-content">
+  <div class="hero-content">
 
-      <div class="hero-top">
+    <div class="hero-top">
 
-        <div class="hero-logo">
-          FG COFFEE
-        </div>
-
-        <a class="button button-glass" href="index.html">
-          ← Hlavní stránka
-        </a>
-
+      <div class="hero-logo">
+        FG COFFEE
       </div>
 
-      <h1>
-        MOBILNÍ<br>
-        COFFEE BAR
-      </h1>
-
-      <p>
-        Výběrová káva pro svatby, eventy, firemní akce
-        i soukromé oslavy. Minimalistický coffee bar,
-        kvalitní servis a důraz na detail.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a class="button button-light" href="#poptavka">
-          Nezávazná poptávka
-        </a>
-
-        <a class="button button-glass" href="https://instagram.com/fgcoffee_bar" target="_blank">
-          Instagram
-        </a>
-
-      </div>
+      <a class="button button-glass" href="index.html">
+        ← Hlavní stránka
+      </a>
 
     </div>
 
-  </section>
-
-  <div class="container">
-
-    <section class="section">
-
-      <div class="section-label">
-        FG Coffee
-      </div>
-
-      <div class="intro">
-
-        Mobilní coffee bar zaměřený na výběrovou kávu,
-        čistý vizuál a příjemnou atmosféru.
-        <span>
-          Každou akci se snažíme přizpůsobit individuálně —
-          od menších oslav až po svatby nebo firemní eventy.
-        </span>
-
-      </div>
-
-    </section>
-
-    <section class="section">
-
-      <div class="section-label">
-        Co nabízíme
-      </div>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-
-          <h4>Espresso bar</h4>
-
-          <p>
-            Espresso, cappuccino i signature drinky
-            z výběrové kávy připravované přímo na místě.
-            Pracujeme s výběrovou kávou z českých
-            i zahraničních pražíren.
-          </p>
-
-        </div>
-
-        <div class="service-card">
-
-          <h4>Filtrovaná káva</h4>
-
-          <p>
-            Batch brew nebo hand brew pro hosty,
-            kteří chtějí čistší a ovocnější chuťový profil.
-          </p>
-
-        </div>
-
-        <div class="service-card">
-
-          <h4>Fermentované limonády</h4>
-
-          <p>
-            Řemeslné limonády Bacilli a další nealko drinky,
-            ideální hlavně během letních eventů a svateb.
-          </p>
-
-        </div>
-
-        <div class="service-card">
-
-          <h4>Kompletní servis</h4>
-
-          <p>
-            Přivezeme techniku, připravíme celý setup
-            a postaráme se o kompletní průběh coffee baru.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="section">
-
-      <div class="experience">
-
-        <div class="experience-image">
-
-          <img src="gallery2.jpg">
-
-        </div>
-
-        <div class="experience-content">
-
-          <div class="section-label">
-            Atmosféra & detail
-          </div>
-
-          <h3>
-            Coffee bar,
-            který zapadne do akce.
-          </h3>
-
-          <p>
-            Minimalistický setup, kvalitní technika
-            a důraz na celkový vizuál.
-          </p>
-
-          <p>
-            Každou akci řešíme individuálně —
-            od nabídky drinků až po samotnou prezentaci baru.
-          </p>
-
-          <p>
-            Cílem není jen servírovat kávu,
-            ale vytvořit příjemný zážitek pro hosty.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="section">
-
-      <div class="section-label">
-        Jak spolupráce probíhá
-      </div>
-
-      <div class="steps">
-
-        <div class="step">
-
-          <div class="step-number">
-            Krok 01
-          </div>
-
-          <div class="step-title">
-            Nezávazná poptávka
-          </div>
-
-          <div class="step-text">
-            Pošleš základní informace o akci,
-            počtu hostů a představě o coffee baru.
-          </div>
-
-        </div>
-
-        <div class="step">
-
-          <div class="step-number">
-            Krok 02
-          </div>
-
-          <div class="step-title">
-            Návrh spolupráce
-          </div>
-
-          <div class="step-text">
-            Společně nastavíme podobu baru,
-            nabídku drinků i průběh celé akce.
-          </div>
-
-        </div>
-
-        <div class="step">
-
-          <div class="step-number">
-            Krok 03
-          </div>
-
-          <div class="step-title">
-            Příprava & realizace
-          </div>
-
-          <div class="step-text">
-            Přivezeme techniku, připravíme setup
-            a vše doladíme přímo na místě.
-          </div>
-
-        </div>
-
-        <div class="step">
-
-          <div class="step-number">
-            Krok 04
-          </div>
-
-          <div class="step-title">
-            Kávový servis
-          </div>
-
-          <div class="step-text">
-            Postaráme se o výběrovou kávu
-            a příjemnou atmosféru pro tvoje hosty.
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="section">
-
-      <div class="section-label">
-        Galerie
-      </div>
-
-      <div class="gallery-grid">
-
-        <img src="gallery1.jpg">
-        <img src="gallery2.jpg">
-        <img src="gallery3.jpg">
-
-      </div>
-
-    </section>
-
-    <section class="section" id="poptavka">
-
-      <div class="contact-box">
-
-        <div>
-
-          <div class="section-label" style="color:rgba(255,255,255,0.45);">
-            Poptávka spolupráce
-          </div>
-
-          <h3>
-            Pojďme vytvořit coffee bar pro tvoji akci.
-          </h3>
-
-          <p>
-            Máš zájem o mobilní coffee bar na svatbu,
-            firemní event nebo soukromou oslavu?
-            Napiš mi a společně vymyslíme podobu celé spolupráce.
-          </p>
-
-          <div class="contact-links">
-
-            <a href="mailto:ahoj@fgcoffee.cz">
-              ahoj@fgcoffee.cz
-            </a>
-
-            <a href="tel:+420725861806">
-              +420 725 861 806
-            </a>
-
-            <a href="https://instagram.com/fgcoffee_bar" target="_blank">
-              @fgcoffee_bar
-            </a>
-
-          </div>
-
-        </div>
-
-        <div>
-
-          <form action="https://formspree.io/f/xdabjolz" method="POST" id="contactForm">
-
-            <div class="form-grid">
-
-              <div class="form-group">
-                <input type="text" name="Jméno" placeholder="Jméno a příjmení" required>
-              </div>
-
-              <div class="form-group">
-                <input type="email" name="Email" placeholder="E-mail" required>
-              </div>
-
-              <div class="form-group">
-                <input type="tel" name="Telefon" placeholder="Telefon" required>
-              </div>
-
-              <div class="form-group">
-                <input type="date" name="Datum akce" required>
-              </div>
-
-              <div class="form-group">
-                <input type="text" name="Místo akce" placeholder="Místo akce" required>
-              </div>
-
-              <div class="form-group">
-                <input type="number" name="Počet hostů" placeholder="Počet hostů" required>
-              </div>
-
-              <div class="form-group full">
-
-                <select name="Typ akce" required>
-
-                  <option value="">Typ akce</option>
-                  <option>Svatba</option>
-                  <option>Firemní akce</option>
-                  <option>Soukromá oslava</option>
-                  <option>Festival</option>
-                  <option>Jiná</option>
-
-                </select>
-
-              </div>
-
-              <div class="form-group full">
-
-                <textarea
-                  name="Představ mi akci"
-                  placeholder="Jakou atmosféru má akce, co si představuješ, jak velký bude prostor nebo cokoliv důležitého ☕"
-                ></textarea>
-
-              </div>
-
-            </div>
-
-            <div class="gdpr">
-
-              <input type="checkbox" required>
-
-              <div>
-                Souhlasím se zpracováním osobních údajů dle
-                <a href="gdpr.html" target="_blank">
-                  GDPR podmínek
-                </a>
-              </div>
-
-            </div>
-
-            <button class="button button-light" type="submit">
-              Odeslat poptávku
-            </button>
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </section>
+    <h1>
+      MOBILNÍ<br>
+      COFFEE BAR
+    </h1>
+
+    <p>
+      Výběrová káva pro svatby, eventy, firemní akce
+      i soukromé oslavy. Minimalistický coffee bar,
+      kvalitní servis a důraz na detail.
+    </p>
 
   </div>
 
-  <footer>
-    FG Coffee © 2026
-  </footer>
+</section>
 
-  <script>
+<div class="container">
 
-    const form = document.getElementById("contactForm");
+<section class="section">
 
-    form.addEventListener("submit", async (e) => {
+<div class="section-label">
+FG Coffee
+</div>
 
-      e.preventDefault();
+<div class="intro">
 
-      const data = new FormData(form);
+Mobilní coffee bar zaměřený na výběrovou kávu,
+čistý vizuál a příjemnou atmosféru.
 
-      const response = await fetch(form.action, {
+<span>
+Každou akci se snažíme přizpůsobit individuálně —
+od menších oslav až po svatby nebo firemní eventy.
+</span>
 
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json"
-        }
+</div>
 
-      });
+</section>
 
-      if(response.ok){
+<section class="section">
 
-        form.reset();
+<div class="section-label">
+Co nabízíme
+</div>
 
-        form.innerHTML = `
+<div class="services-grid">
 
-          <div style="
-            background:rgba(255,255,255,0.08);
-            border:1px solid rgba(255,255,255,0.08);
-            border-radius:28px;
-            padding:42px 30px;
-            text-align:center;
-            backdrop-filter:blur(10px);
-          ">
+<div class="service-card">
+<h4>Espresso bar</h4>
+<p>
+Espresso, cappuccino i signature drinky
+z výběrové kávy připravované přímo na místě.
+Pracujeme s výběrovou kávou z českých
+i zahraničních pražíren.
+</p>
+</div>
 
-            <div style="
-              font-size:12px;
-              letter-spacing:2px;
-              text-transform:uppercase;
-              color:rgba(255,255,255,0.45);
-              margin-bottom:16px;
-            ">
+<div class="service-card">
+<h4>Filtrovaná káva</h4>
+<p>
+Batch brew nebo hand brew pro hosty,
+kteří chtějí čistší a ovocnější chuťový profil.
+</p>
+</div>
 
-              FG Coffee
+<div class="service-card">
+<h4>Fermentované limonády</h4>
+<p>
+Řemeslné limonády Bacilli a další nealko drinky,
+ideální hlavně během letních eventů a svateb.
+</p>
+</div>
 
-            </div>
+<div class="service-card">
+<h4>Kompletní servis</h4>
+<p>
+Přivezeme techniku, připravíme celý setup
+a postaráme se o kompletní průběh coffee baru.
+</p>
+</div>
 
-            <h3 style="
-              font-size:34px;
-              margin-bottom:14px;
-              line-height:1.2;
-              color:white;
-            ">
+</div>
 
-              Odesláno ☕
+</section>
 
-            </h3>
+<section class="section" id="poptavka">
 
-            <p style="
-              color:rgba(255,255,255,0.72);
-              line-height:1.8;
-              font-size:16px;
-              max-width:420px;
-              margin:auto;
-            ">
+<div class="contact-box">
 
-              Děkuji za váš zájem.<br>
-              Brzy vás budu kontaktovat.
+<div>
 
-            </p>
+<div class="section-label" style="color:rgba(255,255,255,0.45);">
+Poptávka spolupráce
+</div>
 
-          </div>
+<h3>
+Pojďme vytvořit coffee bar pro tvoji akci.
+</h3>
 
-        `;
+<p>
+Napiš mi a společně vymyslíme podobu celé spolupráce.
+</p>
 
-      }
+<div class="contact-links">
 
-    });
+<a href="mailto:ahoj@fgcoffee.cz">
+ahoj@fgcoffee.cz
+</a>
 
-  </script>
+<a href="https://instagram.com/fgcoffee_bar" target="_blank">
+@fgcoffee_bar
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<form
+action="https://formspree.io/f/xdabjolz"
+method="POST"
+id="contactForm"
+>
+
+<div class="form-grid">
+
+<div class="form-group">
+<input type="text" name="Jméno" placeholder="Jméno a příjmení" required>
+</div>
+
+<div class="form-group">
+<input type="email" name="Email" placeholder="E-mail" required>
+</div>
+
+<div class="form-group">
+<input type="tel" name="Telefon" placeholder="Telefon" required>
+</div>
+
+<div class="form-group">
+<input type="date" name="Datum akce" required>
+</div>
+
+<div class="form-group full">
+<textarea
+name="Představ mi akci"
+placeholder="Jakou atmosféru má akce, co si představuješ nebo cokoliv důležitého ☕"
+></textarea>
+</div>
+
+</div>
+
+<div class="gdpr">
+
+<input type="checkbox" required>
+
+<div>
+Souhlasím se zpracováním osobních údajů dle
+<a href="gdpr.html" target="_blank">
+GDPR podmínek
+</a>
+</div>
+
+</div>
+
+<button class="button button-light" type="submit">
+Odeslat poptávku
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+FG Coffee © 2026
+</footer>
+
+<script>
+
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", async (e) => {
+
+e.preventDefault();
+
+const data = new FormData(form);
+
+const response = await fetch(form.action, {
+method:"POST",
+body:data,
+headers:{
+Accept:"application/json"
+}
+});
+
+if(response.ok){
+
+form.reset();
+
+form.innerHTML = `
+
+<div style="
+background:rgba(255,255,255,0.08);
+border-radius:28px;
+padding:42px 30px;
+text-align:center;
+">
+
+<h3 style="
+font-size:34px;
+margin-bottom:14px;
+color:white;
+">
+Odesláno ☕
+</h3>
+
+<p style="
+color:rgba(255,255,255,0.72);
+font-size:16px;
+line-height:1.8;
+">
+Děkuji za váš zájem.<br>
+Brzy vás budu kontaktovat.
+</p>
+
+</div>
+
+`;
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
