@@ -222,6 +222,19 @@
       font-size:14px;
       line-height:1.6;
     }
+    .roastery-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+@media (max-width:768px){
+
+  .roastery-grid{
+    grid-template-columns:1fr;
+  }
+
+}
 
     .slider-wrapper{
       position:relative;
@@ -509,11 +522,12 @@
         Neděle (7.7.): 9:00 - 13:00
 
       </div>
-
+      <div class="roastery-grid">
+        
       <div class="roastery-box">
 
         <div class="roastery-label">
-          Tento víkend na mlýnku
+          Tento víkend na espressu
         </div>
 
         <div class="roastery-name">
@@ -526,6 +540,25 @@
         </div>
 
       </div>
+
+        <div class="roastery-box">
+
+    <div class="roastery-label">
+      Tento víkend na filtru
+    </div>
+
+    <div class="roastery-name">
+      BeBerry
+    </div>
+
+    <div class="roastery-text">
+      Peru - El Paraiso<br>
+      florální • broskev • jahoda • mandarinka
+    </div>
+
+  </div>
+
+</div>
 
     </section>
 
