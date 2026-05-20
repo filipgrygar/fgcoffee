@@ -564,7 +564,7 @@
             <h4>Základní latte art</h4>
 
             <p>
-              Jak správně napěnit mléko a vytvořit první srdíčko nebo tulipán.
+              Jak správně napěnit mléko a vytvořit své první srdíčko nebo tulipán. Provedu tě základními technikami a dám ti všechny důležité tipy.
             </p>
 
             <div class="course-meta">
@@ -589,7 +589,7 @@
             <h4>Skupinový cupping</h4>
 
             <p>
-              Řízená degustace výběrových káv a objevování chutí napříč zpracováním i původem.
+              Řízená degustace výběrových káv a objevování chutí napříč zpracováním i původem. Ochutnáme společně 9-12 vzorků káv z různých pražíren.
             </p>
 
             <div class="course-meta">
@@ -626,7 +626,7 @@
             <h4 id="calendarMonth"></h4>
 
             <span>
-              Klikni na termín pro rezervaci
+              Klikni na termín pro rezervaci.
             </span>
 
           </div>
@@ -967,7 +967,7 @@
       if(currentMonthEvents.length > 0){
 
         document.getElementById("calendarInfo").innerHTML =
-          `Aktuálně vypsané termíny workshopů ☕`;
+          `Aktuálně vypsané termíny kurzů ☕`;
 
         workshopList.innerHTML =
           currentMonthEvents.map(event => {
@@ -1009,7 +1009,7 @@
       } else {
 
         document.getElementById("calendarInfo").innerHTML =
-          `Momentálně nejsou vypsané další termíny workshopů.`;
+          `Momentálně nejsou vypsané další termíny workshopů. Pokud máš zájem o kurz v tomto měsící, tak mě prosím kontaktujte na e-mailu ahoj@fgcoffee.cz`;
 
         workshopList.innerHTML = "";
 
@@ -1093,7 +1093,7 @@
 
         closeModal();
 
-        alert("Rezervace byla odeslána ☕");
+        alert("Vaše rezervace byla odeslána ☕");
 
         form.reset();
 
