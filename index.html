@@ -474,6 +474,20 @@
   display:block;
   margin:0 auto 24px auto;
 }
+.opening-hours{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.opening-hours div{
+  background:white;
+  border-radius:16px;
+  padding:18px 24px;
+  font-size:1.3rem;
+  font-weight:700;
+}
 
 @media (max-width:768px){
 
@@ -554,10 +568,11 @@
         Zastavte se na výběrovou kávu, něco sladkého nebo jen na kafíčko.
 
         <br><br>
-
-        Pátek (5.6.): 13:00 - 17:00<br>
-        Sobota (6.6.): 9:00 - 17:00<br>
-        Neděle (7.6.): 9:00 - 13:00
+        <div class="opening-hours">
+  <div>PÁ 13:00–17:00</div>
+  <div>SO 9:00–17:00</div>
+  <div>NE 9:00–13:00</div>
+</div>
 
       </div>
       <div class="roastery-grid">
