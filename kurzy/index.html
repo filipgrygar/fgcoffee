@@ -451,6 +451,26 @@
   z-index:999;
   text-transform:uppercase;
 }
+    .coming-soon{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:clamp(80px,10vw,200px);
+
+  font-weight:900;
+  letter-spacing:12px;
+  color:rgba(0,0,0,0.10);
+
+  transform:rotate(-20deg);
+
+  pointer-events:none;
+  user-select:none;
+
+  z-index:999;
+}
 
     @media (max-width:950px){
 
@@ -459,6 +479,15 @@
       }
 
     }
+    @media (max-width:768px){
+
+  .coming-soon{
+    font-size:48px;
+    letter-spacing:4px;
+    transform:rotate(-25deg);
+  }
+
+}
 
     @media (max-width:768px){
 
