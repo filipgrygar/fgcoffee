@@ -75,10 +75,11 @@
 }
 
 .ect-link{
-    display:inline-block;
-    margin-top:36px;
-    transition:opacity .25s ease, transform .25s ease;
-    opacity:.8;
+    display:block;
+    margin-top:28px;
+    text-align:center;
+    opacity:.9;
+    transition:.25s;
 }
 
 .ect-link:hover{
@@ -87,9 +88,22 @@
 }
 
 .ect-link img{
-    width:110px;
+    width:95px;
     height:auto;
     display:block;
+    margin:0 auto;
+}
+
+@media (max-width:768px){
+
+    .ect-link{
+        margin-top:24px;
+    }
+
+    .ect-link img{
+        width:90px;
+    }
+
 }
 
     .topbar nav{
@@ -590,21 +604,20 @@
       </p>
 
       <div class="buttons">
+    <a class="button" href="https://instagram.com/fgcoffeebar" target="_blank">
+        Instagram
+    </a>
 
-        <a class="button" href="https://instagram.com/fgcoffeebar" target="_blank">
-          Instagram
-        </a>
+    <a class="button" href="#open">
+        Coffee Spot
+    </a>
+</div>
 
-        <a class="button" href="#open">
-          Coffee Spot
-        </a>
-
-    <a class="ect-link"
+<a class="ect-link"
    href="https://europeancoffeetrip.com/"
    target="_blank">
 
     <img src="ect-badge.png" alt="">
-
 </a>
 
     </div>
