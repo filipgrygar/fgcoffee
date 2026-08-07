@@ -73,53 +73,23 @@
   display:block;
   margin:0 auto 24px auto;
 }
-    .ect-badge{
-    margin-top: 24px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
 
-    padding: 8px 16px;
-
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.15);
-    backdrop-filter: blur(12px);
-
-    border-radius: 999px;
-
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-
-    text-decoration: none;
-
-    transition: .25s ease;
-}
-    .ect-badge:hover{
-    background: rgba(255,255,255,.14);
-    transform: translateY(-2px);
+.ect-link{
+    display:inline-block;
+    margin-top:36px;
+    transition:opacity .25s ease, transform .25s ease;
+    opacity:.8;
 }
 
-.ect-badge img{
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: block;
+.ect-link:hover{
+    opacity:1;
+    transform:translateY(-2px);
 }
 
-.ect-badge span{
-    white-space: nowrap;
-}
-
-.ect-badge img{
-    width:34px;
-    height:34px;
-    border-radius:50%;
-}
-
-.ect-badge span{
-    opacity:.95;
+.ect-link img{
+    width:110px;
+    height:auto;
+    display:block;
 }
 
     .topbar nav{
@@ -629,9 +599,12 @@
           Coffee Spot
         </a>
 
-     <a href="SEM VLOŽ ODKAZ NA ECT" class="ect-badge" target="_blank">
-    <img src="ect-badge.png" alt="European Coffee Trip">
-    <span>European Coffee Trip ↗</span>
+    <a class="ect-link"
+   href="https://europeancoffeetrip.com/"
+   target="_blank">
+
+    <img src="ect-badge.png" alt="">
+
 </a>
 
     </div>
