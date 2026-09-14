@@ -62,49 +62,23 @@
       letter-spacing:3px;
       font-weight:600;
     }
+
     .logo img{
-  height:42px;
-  width:auto;
-  display:block;
-}
+      height:42px;
+      width:auto;
+      display:block;
+    }
+
     .hero-main-logo{
-  width:220px;
-  height:auto;
-  display:block;
-  margin:0 auto 24px auto;
-}
-
-.ect-link{
-    display:block;
-    margin-top:28px;
-    text-align:center;
-    opacity:.9;
-    transition:.25s;
-}
-
-.ect-link:hover{
-    opacity:1;
-    transform:translateY(-2px);
-}
-
-.ect-link img{
-    width:95px;
-    height:auto;
-    display:block;
-    margin:0 auto;
-}
-
-@media (max-width:768px){
+      width:220px;
+      height:auto;
+      display:block;
+      margin:0 auto 24px auto;
+    }
 
     .ect-link{
-        margin-top:24px;
+      display:none;
     }
-
-    .ect-link img{
-        width:90px;
-    }
-
-}
 
     .topbar nav{
       display:flex;
@@ -138,13 +112,13 @@
     }
 
     .hero-content{
-  max-width:1000px;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
+      max-width:1000px;
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
 
     .hero h1{
       font-size:82px;
@@ -211,6 +185,104 @@
       max-width:760px;
     }
 
+    .text a{
+      color:inherit;
+      text-decoration:underline !important;
+      text-underline-offset:3px;
+    }
+
+    .text a:hover{
+      opacity:0.7;
+    }
+
+    /* AKCE */
+    .events-list{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-top:4px;
+    }
+
+    .event{
+      display:flex;
+      align-items:center;
+      min-height:88px;
+      padding:15px 20px;
+      border:1px solid #dedbd5;
+      border-radius:16px;
+      background:rgba(255,255,255,0.35);
+    }
+
+    .event-date{
+      width:102px;
+      flex-shrink:0;
+      display:flex;
+      flex-direction:column;
+      padding-right:18px;
+      border-right:1px solid #dedbd5;
+    }
+
+    .event-date span{
+      margin-bottom:3px;
+      font-size:10px;
+      font-weight:600;
+      letter-spacing:2px;
+      color:#85827c;
+    }
+
+    .event-date strong{
+      font-size:24px;
+      line-height:1;
+      font-weight:700;
+      letter-spacing:-0.5px;
+    }
+
+    .event-date small{
+      margin-top:4px;
+      font-size:12px;
+      color:#77736d;
+    }
+
+    .event-info{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      padding-left:18px;
+    }
+
+    .event-info strong{
+      font-size:17px;
+      font-weight:700;
+      letter-spacing:-0.2px;
+    }
+
+    .event-info span{
+      font-size:13px;
+      line-height:1.4;
+      color:#77736d;
+    }
+
+    .upcoming-spot{
+      display:flex;
+      align-items:baseline;
+      gap:13px;
+      margin-top:22px;
+      padding-left:2px;
+    }
+
+    .upcoming-spot span{
+      font-size:10px;
+      font-weight:600;
+      letter-spacing:2.2px;
+      color:#99958e;
+    }
+
+    .upcoming-spot strong{
+      font-size:14px;
+      font-weight:500;
+      color:#55524d;
+    }
+
     .menu{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -270,22 +342,12 @@
       font-size:14px;
       line-height:1.6;
     }
+
     .roastery-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-@media (max-width:768px){
-
-  .roastery-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-.ect-link {
-    display: none;
-}
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
 
     .slider-wrapper{
       position:relative;
@@ -413,63 +475,51 @@
       margin-bottom:8px;
     }
 
+    .opening-section{
+      max-width:700px;
+      margin:0 auto 80px;
+      text-align:left;
+    }
+
+    .weekend-label{
+      font-size:.95rem;
+      letter-spacing:8px;
+      text-transform:uppercase;
+      color:#8b8b8b;
+      margin-bottom:24px;
+      font-weight:600;
+    }
+
+    .weekend-date{
+      font-size:3.5rem;
+      line-height:1;
+      margin:0 0 20px;
+      font-weight:800;
+    }
+
+    .weekend-location{
+      font-size:1.3rem;
+      margin-bottom:30px;
+    }
+
+    .weekend-hours{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .weekend-hours div{
+      font-size:1.35rem;
+      font-weight:700;
+      line-height:1.8;
+    }
+
     footer{
       text-align:center;
       padding:60px 20px;
       color:#777;
       font-size:14px;
     }
-     @media (max-width: 700px) {
-
-    .events-section {
-      padding: 15px 20px;
-    }
-
-    .events-list {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .event {
-      min-height: 88px;
-      padding: 15px 18px;
-    }
-
-    .event-date {
-      width: 95px;
-      padding-right: 16px;
-    }
-
-    .event-date strong {
-      font-size: 23px;
-    }
-
-    .event-info {
-      padding-left: 16px;
-    }
-
-    .event-info strong {
-      font-size: 17px;
-    }
-
-    .event-info span {
-      font-size: 13px;
-    }
-
-    .upcoming-spot {
-      margin-top: 22px;
-      gap: 10px;
-    }
-
-    .upcoming-spot span {
-      font-size: 10px;
-    }
-
-    .upcoming-spot strong {
-      font-size: 14px;
-    }
-  }
-</style>
 
     @media (max-width:768px){
 
@@ -502,8 +552,16 @@
         font-size:16px;
       }
 
+      .hero-main-logo{
+        width:220px;
+      }
+
       .text{
         font-size:18px;
+      }
+
+      .roastery-grid{
+        grid-template-columns:1fr;
       }
 
       .slides img{
@@ -549,78 +607,65 @@
       .roastery-box{
         max-width:100%;
       }
-      
-     .hero-content{
-  max-width:1000px;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
 
-.opening-section{
-  max-width:700px;
-  margin:0 auto 80px;
-  text-align:left;
-}
+      .ect-link{
+        margin-top:24px;
+      }
 
-.weekend-label{
-  font-size:.95rem;
-  letter-spacing:8px;
-  text-transform:uppercase;
-  color:#8b8b8b;
-  margin-bottom:24px;
-  font-weight:600;
-}
+      .ect-link img{
+        width:90px;
+      }
 
-.weekend-date{
-  font-size:3.5rem;
-  line-height:1;
-  margin:0 0 20px;
-  font-weight:800;
-}
+      .events-list{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
 
-.weekend-location{
-  font-size:1.3rem;
-  margin-bottom:30px;
-}
+      .event{
+        min-height:88px;
+        padding:15px 18px;
+      }
 
-.weekend-hours{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
+      .event-date{
+        width:95px;
+        padding-right:16px;
+      }
 
-.weekend-hours div{
-  font-size:1.35rem;
-  font-weight:700;
-  line-height:1.8;
-}
-      .text a{
-  color:inherit;
-  text-decoration:underline !important;
-  text-underline-offset:3px;
-}
+      .event-date strong{
+        font-size:23px;
+      }
 
-.text a:hover{
-  opacity:0.7;
-}
+      .event-info{
+        padding-left:16px;
+      }
 
-@media (max-width:768px){
+      .event-info strong{
+        font-size:17px;
+      }
 
-  .hero-main-logo{
-    width:220px;
-  }
+      .event-info span{
+        font-size:13px;
+      }
 
-}
+      .upcoming-spot{
+        margin-top:22px;
+        gap:10px;
+        flex-wrap:wrap;
+      }
 
-}
+      .upcoming-spot span{
+        font-size:10px;
+      }
 
+      .upcoming-spot strong{
+        font-size:14px;
+      }
     }
 
   </style>
 </head>
+
+
 
 <body>
 
@@ -683,61 +728,50 @@
     <section class="section" id="open">
 
       <h3>Kde nás potkáte?</h3>
-<section class="events-section">
 
-  <div class="events-list">
+      <div class="events-list">
 
-    <div class="event">
-      <div class="event-date">
-        <span>SOBOTA</span>
-        <strong>12. 9.</strong>
-        <small>2026</small>
-      </div>
+        <div class="event">
+          <div class="event-date">
+            <span>SOBOTA</span>
+            <strong>12. 9.</strong>
+            <small>2026</small>
+          </div>
 
-      <div class="event-info">
-        <strong>KD Komárov</strong>
-        <span>Coffee spot na místě</span>
-      </div>
-    </div>
+          <div class="event-info">
+            <strong>KD Komárov</strong>
+            <span>Coffee spot na místě</span>
+          </div>
+        </div>
 
-    <div class="event">
-      <div class="event-date">
-        <span>SOBOTA</span>
-        <strong>3. 10.</strong>
-        <small>2026</small>
-      </div>
+        <div class="event">
+          <div class="event-date">
+            <span>SOBOTA</span>
+            <strong>3. 10.</strong>
+            <small>2026</small>
+          </div>
 
-      <div class="event-info">
-        <strong>Chrustenice</strong>
-        <span>Běžecký závod · Coffee spot na místě</span>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="upcoming-spot">
-    <span>COFFEE SPOT CHYŇAVA</span>
-    <strong>Připravujeme.</strong>
-  </div>
-
-</section>
-
-
-<style>
-  .events-section {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 24px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #171717;
-  }
-
-</section>
+          <div class="event-info">
+            <strong>Chrustenice</strong>
+            <span>Běžecký závod · Coffee spot na místě</span>
+          </div>
+        </div>
 
       </div>
+
+      <div class="upcoming-spot">
+        <span>COFFEE SPOT CHYŇAVA</span>
+        <strong>Připravujeme.</strong>
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <h3>Tento víkend na kávě</h3>
+
       <div class="roastery-grid">
+
         
       <div class="roastery-box">
 
