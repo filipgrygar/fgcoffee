@@ -419,6 +419,57 @@
       color:#777;
       font-size:14px;
     }
+     @media (max-width: 700px) {
+
+    .events-section {
+      padding: 15px 20px;
+    }
+
+    .events-list {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .event {
+      min-height: 88px;
+      padding: 15px 18px;
+    }
+
+    .event-date {
+      width: 95px;
+      padding-right: 16px;
+    }
+
+    .event-date strong {
+      font-size: 23px;
+    }
+
+    .event-info {
+      padding-left: 16px;
+    }
+
+    .event-info strong {
+      font-size: 17px;
+    }
+
+    .event-info span {
+      font-size: 13px;
+    }
+
+    .upcoming-spot {
+      margin-top: 22px;
+      gap: 10px;
+    }
+
+    .upcoming-spot span {
+      font-size: 10px;
+    }
+
+    .upcoming-spot strong {
+      font-size: 14px;
+    }
+  }
+</style>
 
     @media (max-width:768px){
 
@@ -631,22 +682,57 @@
 
     <section class="section" id="open">
 
-      <h3>Kdy bude Coffee Spot otevřen?</h3>
+      <h3>Kde nás potkáte?</h3>
+<section class="events-section">
 
-      <div class="text" style="margin-bottom:42px;">
+  <div class="events-list">
 
-            Další Coffee Spot už připravujeme. 
+    <div class="event">
+      <div class="event-date">
+        <span>SOBOTA</span>
+        <strong>12. 9.</strong>
+        <small>2026</small>
+      </div>
 
+      <div class="event-info">
+        <strong>KD Komárov</strong>
+        <span>Coffee spot na místě</span>
+      </div>
+    </div>
 
-        <br><br>
-      <section class="opening-section">
+    <div class="event">
+      <div class="event-date">
+        <span>SOBOTA</span>
+        <strong>3. 10.</strong>
+        <small>2026</small>
+      </div>
 
+      <div class="event-info">
+        <strong>Chrustenice</strong>
+        <span>Běžecký závod · Coffee spot na místě</span>
+      </div>
+    </div>
 
-  <div class="weekend-hours">
-    <div>Akce, na kterých nás můžete potkat:</div>
-    <div>Sobota 12.9.2026 - KD Komárov</div>
-    <div> Sobota 3.10.2026 - Chrustenice (běžecký závod)</div>
   </div>
+
+
+  <div class="upcoming-spot">
+    <span>COFFEE SPOT CHYŇAVA</span>
+    <strong>Připravujeme.</strong>
+  </div>
+
+</section>
+
+
+<style>
+  .events-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #171717;
+  }
 
 </section>
 
